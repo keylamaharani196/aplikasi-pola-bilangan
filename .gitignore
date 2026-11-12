@@ -1,0 +1,11 @@
+# Visual Studio Code
+.vscode/
+
+# Sistem operasi
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# File sementara
+*.tmp
+*.log
