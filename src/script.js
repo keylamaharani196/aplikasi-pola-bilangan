@@ -203,3 +203,38 @@ function resetJawaban() {
 
     perbaruiProgres();
 }
+// ==========================================
+// SIMPAN JAWABAN TES LITERASI MATEMATIS
+// ==========================================
+
+function simpanJawabanLiterasi() {
+    let hasil = "HASIL TES LITERASI MATEMATIS\n";
+    hasil += "Materi: Pola Bilangan Ganjil dan Genap\n";
+    hasil += "====================================\n\n";
+
+    for (let nomor = 1; nomor <= 5; nomor++) {
+        hasil += "SOAL " + nomor + "\n";
+
+        let tahap = document.querySelectorAll(
+            '[id^="l' + nomor + 't"]'
+        );
+
+        tahap.forEach((kolom, indeks) => {
+            hasil += "Tahap " + (indeks + 1) + ":\n";
+            hasil += (kolom.value.trim() || "Belum dijawab") + "\n\n";
+        });
+
+        hasil += "------------------------------------\n\n";
+    }
+
+    const file = new Blob([hasil], {
+        type: "text/plain;charset=utf-8"
+    });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(file);
+    link.download = "Jawaban_Tes_Literasi.txt";
+    link.click();
+
+    URL.revokeObjectURL(link.href);
+}

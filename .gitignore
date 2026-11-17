@@ -9,3 +9,6 @@ desktop.ini
 # File sementara
 *.tmp
 *.log
+node_modules/
+.env
+backend/.env
