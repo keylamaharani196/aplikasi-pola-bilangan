@@ -504,3 +504,157 @@ footer p {
     pointer-events: auto !important;
     cursor: pointer !important;
 }
+
+.ai-chat-box {
+    background: #f5f3ff;
+    border-radius: 14px;
+    padding: 16px;
+    min-height: 180px;
+    max-height: 350px;
+    overflow-y: auto;
+    margin: 16px 0;
+}
+
+.ai-message,
+.user-message {
+    padding: 12px;
+    border-radius: 12px;
+    margin: 10px 0;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.ai-message {
+    background: #ffffff;
+    border: 1px solid #ddd6fe;
+    margin-right: 15%;
+}
+
+.user-message {
+    background: #ddd6fe;
+    margin-left: 15%;
+    text-align: right;
+}
+
+.ai-input-area textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* KAK ARITMA CHATBOT */
+#chat-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 30px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#chat-widget {
+    position: fixed;
+    right: 20px;
+    bottom: 85px;
+    z-index: 9999;
+    width: 340px;
+    max-width: calc(100vw - 30px);
+    height: 450px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px #0003;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+#chat-widget:not([hidden]) {
+    display: flex;
+}
+
+.chat-header {
+    padding: 15px;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header small {
+    display: block;
+    margin-top: 4px;
+}
+
+#chat-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#chat-messages {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-message {
+    padding: 10px 12px;
+    border-radius: 12px;
+    max-width: 85%;
+    overflow-wrap: anywhere;
+}
+
+.chat-message.bot {
+    background: #e8efff;
+    align-self: flex-start;
+}
+
+.chat-message.user {
+    background: #2563eb;
+    color: white;
+    align-self: flex-end;
+}
+
+#chat-form {
+    display: flex;
+    padding: 10px;
+    gap: 7px;
+    border-top: 1px solid #ddd;
+}
+
+#chat-input {
+    min-width: 0;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+#chat-send {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 20px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    #chat-widget {
+        right: 10px;
+        bottom: 80px;
+        width: calc(100vw - 20px);
+    }
+}

@@ -12,3 +12,5 @@ desktop.ini
 node_modules/
 .env
 backend/.env
+**/.env
+**/node_modules/
