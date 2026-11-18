@@ -5,808 +5,250 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Media pembelajaran interaktif pola bilangan ganjil dan genap untuk siswa SMP.">
-    <link rel="stylesheet" href="src/style.css">
-    <title>MathLearn - Pola Bilangan</title>
+    <title>MathLearn - Pola Bilangan Ganjil dan Genap</title>
+    <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
 
-<header id="beranda">
-    <div class="hero-content">
-        <span>MEDIA PEMBELAJARAN MATEMATIKA</span>
-        <h1>Yuk, Belajar Pola Bilangan!</h1>
-        <p>
-            Kenali pola bilangan ganjil dan genap, pahami rumusnya,
-            dan uji kemampuanmu melalui latihan interaktif.
-        </p>
-        <a class="hero-button" href="#materi">Mulai Belajar</a>
-    </div>
+<header>
+    <h1>MathLearn</h1>
+    <p>Media Pembelajaran Pola Bilangan Ganjil dan Genap</p>
 </header>
 
 <nav>
-    <a href="#beranda">Beranda</a>
-    <a href="#tujuan">Tujuan</a>
     <a href="#materi">Materi</a>
-    <a href="#aktivitas-rmt">Aktivitas RMT</a>
     <a href="#contoh">Contoh Soal</a>
     <a href="#latihan">Latihan</a>
-    <a href="#tes-literasi">Tes Literasi</a>
+    <a href="#literasi">Literasi Matematis</a>
+    <a href="#rmt">Aktivitas RMT</a>
 </nav>
 
 <main>
 
-    <section id="tujuan">
-        <h2>Tujuan Pembelajaran</h2>
-        <p>Setelah mempelajari materi ini, siswa diharapkan mampu:</p>
-        <div class="tujuan-grid">
-            <div class="info-card">
-                <h3>01</h3>
-                <p>Mengidentifikasi bilangan ganjil dan genap.</p>
-            </div>
-            <div class="info-card">
-                <h3>02</h3>
-                <p>Menentukan pola dan rumus suku ke-n.</p>
-            </div>
-            <div class="info-card">
-                <h3>03</h3>
-                <p>Membedakan sifat operasi bilangan ganjil dan genap.</p>
-            </div>
-            <div class="info-card">
-                <h3>04</h3>
-                <p>Menyelesaikan permasalahan pola bilangan.</p>
-            </div>
-        </div>
-    </section>
-
     <section id="materi">
-        <h2>Materi Pembelajaran</h2>
+        <h2>1. Materi Pola Bilangan</h2>
 
-        <div class="materi-box">
-            <h3>1. Pola Bilangan Ganjil</h3>
-            <p>
-                Bilangan ganjil adalah bilangan bulat yang tidak
-                habis dibagi 2. Apabila suatu bilangan dibagi 2,
-                bilangan ganjil memiliki sisa 1.
-            </p>
-            <div class="pola">
-                1 → 3 → 5 → 7 → 9 → 11 → 13 → 15 → ...
-            </div>
-            <p>
-                Setiap suku bertambah 2 dari suku sebelumnya.
-                Pola ini dimulai dari bilangan 1.
-            </p>
-            <div class="rumus">
-                U<sub>n</sub> = 2n - 1
-            </div>
-            <p><strong>Keterangan:</strong></p>
-            <ul>
-                <li>U<sub>n</sub> adalah suku ke-n.</li>
-                <li>n adalah urutan atau posisi suku.</li>
-                <li>2 adalah selisih antarsuku.</li>
-            </ul>
-        </div>
+        <h3>A. Pola Bilangan Ganjil</h3>
+        <p>
+            Pola bilangan ganjil adalah susunan bilangan yang dimulai
+            dari 1 dan bertambah 2 pada setiap suku.
+        </p>
+        <p><strong>Contoh:</strong> 1, 3, 5, 7, 9, 11, ...</p>
+        <p><strong>Rumus:</strong> Un = 2n - 1</p>
 
-        <div class="materi-box">
-            <h3>2. Pola Bilangan Genap</h3>
-            <p>
-                Bilangan genap adalah bilangan bulat yang habis
-                dibagi 2 tanpa menyisakan bilangan.
-            </p>
-            <div class="pola">
-                2 → 4 → 6 → 8 → 10 → 12 → 14 → 16 → ...
-            </div>
-            <p>
-                Setiap suku bertambah 2 dari suku sebelumnya.
-                Pola ini dimulai dari bilangan 2.
-            </p>
-            <div class="rumus">
-                U<sub>n</sub> = 2n
-            </div>
-            <p><strong>Keterangan:</strong></p>
-            <ul>
-                <li>U<sub>n</sub> adalah suku ke-n.</li>
-                <li>n adalah urutan atau posisi suku.</li>
-                <li>2 adalah pengali urutan suku.</li>
-            </ul>
-        </div>
+        <h3>B. Pola Bilangan Genap</h3>
+        <p>
+            Pola bilangan genap adalah susunan bilangan yang dimulai
+            dari 2 dan bertambah 2 pada setiap suku.
+        </p>
+        <p><strong>Contoh:</strong> 2, 4, 6, 8, 10, 12, ...</p>
+        <p><strong>Rumus:</strong> Un = 2n</p>
 
-        <h3>3. Perbedaan Bilangan Ganjil dan Genap</h3>
-        <div class="table-wrap">
-            <table>
-                <tr>
-                    <th>Aspek</th>
-                    <th>Bilangan Ganjil</th>
-                    <th>Bilangan Genap</th>
-                </tr>
-                <tr>
-                    <td>Contoh</td>
-                    <td>1, 3, 5, 7, 9</td>
-                    <td>2, 4, 6, 8, 10</td>
-                </tr>
-                <tr>
-                    <td>Pembagian 2</td>
-                    <td>Tidak habis dibagi 2</td>
-                    <td>Habis dibagi 2</td>
-                </tr>
-                <tr>
-                    <td>Rumus</td>
-                    <td>U<sub>n</sub> = 2n - 1</td>
-                    <td>U<sub>n</sub> = 2n</td>
-                </tr>
-                <tr>
-                    <td>Suku pertama</td>
-                    <td>1</td>
-                    <td>2</td>
-                </tr>
-            </table>
-        </div>
-
-        <h3>4. Sifat Operasi Bilangan Ganjil dan Genap</h3>
-        <div class="table-wrap">
-            <table>
-                <tr>
-                    <th>Operasi</th>
-                    <th>Hasil</th>
-                </tr>
-                <tr><td>Ganjil + Ganjil</td><td>Genap</td></tr>
-                <tr><td>Genap + Genap</td><td>Genap</td></tr>
-                <tr><td>Ganjil + Genap</td><td>Ganjil</td></tr>
-                <tr><td>Ganjil × Ganjil</td><td>Ganjil</td></tr>
-                <tr><td>Genap × Genap</td><td>Genap</td></tr>
-                <tr><td>Ganjil × Genap</td><td>Genap</td></tr>
-            </table>
-        </div>
-
-        <div class="catatan">
-            <strong>Ingat!</strong>
-            Bilangan ganjil dan genap memiliki pola yang
-            bertambah 2 pada setiap suku berikutnya.
-        </div>
+        <h3>C. Perbedaan Pola Ganjil dan Genap</h3>
+        <p>
+            Bilangan ganjil tidak habis dibagi 2, sedangkan bilangan
+            genap habis dibagi 2.
+        </p>
     </section>
 
-    <!-- AKTIVITAS RMT -->
-    <section id="aktivitas-rmt">
-        <h2>Aktivitas Pembelajaran Berbasis RMT</h2>
-        <p>
-            Pada aktivitas ini, siswa mempelajari pola bilangan ganjil
-            dan genap melalui pengamatan, analisis, penggunaan alat
-            bantu matematis, serta penjelasan hasil pemikiran.
-        </p>
-
-        <div class="materi-box">
-            <span class="label-soal">TAHAP 1 - INPUT</span>
-            <h3>Mengamati Pola Bilangan</h3>
-            <p>Perhatikan urutan bilangan ganjil berikut.</p>
-            <div class="pola">1 → 3 → 5 → 7 → 9</div>
-            <p>Perhatikan juga urutan bilangan genap berikut.</p>
-            <div class="pola">2 → 4 → 6 → 8 → 10</div>
-            <p><strong>Amati informasi berikut:</strong></p>
-            <ul>
-                <li>Bilangan pertama pada pola ganjil adalah 1.</li>
-                <li>Bilangan pertama pada pola genap adalah 2.</li>
-                <li>Kedua pola bertambah 2 pada setiap suku.</li>
-            </ul>
-            <div class="catatan">
-                <strong>Pertanyaan pengamatan:</strong>
-                Apa perbedaan pola bilangan ganjil dan pola bilangan genap?
-            </div>
-        </div>
-
-        <div class="materi-box">
-            <span class="label-soal">TAHAP 2 - ELABORATION</span>
-            <h3>Menganalisis Hubungan Bilangan</h3>
-            <p>Analisis hubungan antara suku-suku yang berurutan.</p>
-            <div class="table-wrap">
-                <table>
-                    <tr><th>Pola Ganjil</th><th>Selisih</th></tr>
-                    <tr><td>1 ke 3</td><td>+2</td></tr>
-                    <tr><td>3 ke 5</td><td>+2</td></tr>
-                    <tr><td>5 ke 7</td><td>+2</td></tr>
-                    <tr><td>7 ke 9</td><td>+2</td></tr>
-                </table>
-            </div>
-            <p><strong>Pertanyaan analisis:</strong></p>
-            <ul>
-                <li>Apakah selisih setiap suku selalu sama?</li>
-                <li>Mengapa pola tersebut bertambah 2?</li>
-                <li>Apa hubungan antara urutan suku dan nilai bilangannya?</li>
-            </ul>
-            <div class="catatan">
-                <strong>Petunjuk:</strong>
-                Bandingkan setiap bilangan dengan bilangan sebelumnya.
-                Gunakan hasil pengamatan untuk menemukan aturan pola.
-            </div>
-        </div>
-
-        <div class="materi-box">
-            <span class="label-soal">MATHEMATICALLY SPECIFIC PSYCHOLOGICAL TOOLS</span>
-            <h3>Menggunakan Alat Bantu Matematis</h3>
-            <p>
-                Gunakan pola bilangan, tabel, simbol, dan rumus
-                untuk menyatakan hubungan matematika.
-            </p>
-            <div class="rumus">
-                Pola Ganjil: U<sub>n</sub> = 2n - 1
-            </div>
-            <div class="rumus">
-                Pola Genap: U<sub>n</sub> = 2n
-            </div>
-            <p><strong>Keterangan:</strong></p>
-            <ul>
-                <li>U<sub>n</sub> menyatakan nilai suku ke-n.</li>
-                <li>n menyatakan urutan atau posisi suku.</li>
-                <li>Rumus membantu menentukan suku tanpa menuliskan seluruh pola.</li>
-            </ul>
-            <div class="contoh">
-                <h3>Contoh penggunaan rumus</h3>
-                <p>Menentukan suku ke-5 bilangan ganjil:</p>
-                <p>U<sub>5</sub> = 2(5) - 1</p>
-                <p>U<sub>5</sub> = 10 - 1</p>
-                <div class="jawaban">U<sub>5</sub> = 9</div>
-            </div>
-        </div>
-
-        <div class="materi-box">
-            <span class="label-soal">TAHAP 3 - OUTPUT</span>
-            <h3>Menjelaskan Hasil Pemikiran</h3>
-            <p>
-                Setelah mengamati dan menganalisis pola,
-                jelaskan hasil pemikiranmu.
-            </p>
-            <ul>
-                <li>Bagaimana cara menemukan aturan pola bilangan ganjil?</li>
-                <li>Bagaimana cara menemukan aturan pola bilangan genap?</li>
-                <li>Mengapa kedua pola memiliki rumus yang berbeda?</li>
-            </ul>
-            <div class="catatan">
-                <strong>Tantangan:</strong>
-                Jelaskan hubungan antara pola bilangan, tabel,
-                dan rumus suku ke-n menggunakan bahasamu sendiri.
-            </div>
-        </div>
-
-        <div class="materi-box">
-            <span class="label-soal">MEDIATED LEARNING EXPERIENCE</span>
-            <h3>Penerapan Pembelajaran Terbimbing</h3>
-            <p>
-                Dalam proses pembelajaran, siswa memperoleh arahan
-                melalui tiga kriteria pengalaman belajar berikut.
-            </p>
-            <div class="info-card">
-                <h3>1. Intentionality and Reciprocity</h3>
-                <p>
-                    Siswa diarahkan untuk memperhatikan pola bilangan
-                    dan aktif merespons pertanyaan pembelajaran.
-                </p>
-            </div>
-            <div class="info-card">
-                <h3>2. Meaning / Meaningfulness</h3>
-                <p>
-                    Siswa memahami alasan penggunaan pola dan rumus
-                    dalam menyelesaikan permasalahan matematika.
-                </p>
-            </div>
-            <div class="info-card">
-                <h3>3. Transcendence</h3>
-                <p>
-                    Siswa menerapkan pemahaman pola bilangan
-                    untuk menyelesaikan permasalahan dalam konteks lain.
-                </p>
-            </div>
-        </div>
-
-
-
-<div class="materi-box" id="aktivitas-berpikir-rmt">
-    <span class="label-soal">AKTIVITAS BERPIKIR RMT</span>
-    <h3>Ayo, Selesaikan Tantangan!</h3>
-
-    <p>
-        Sebuah sekolah membuat nomor kartu untuk dua kelompok.
-        Kelompok A menggunakan bilangan ganjil mulai dari 1,
-        sedangkan kelompok B menggunakan bilangan genap mulai dari 2.
-        Setiap nomor berikutnya bertambah 2.
-    </p>
-
-    <div class="catatan">
-        <strong>Permasalahan:</strong>
-        Tentukan nomor kartu pada tahap ke-8 untuk kedua kelompok.
-        Jelaskan bagaimana kamu memperoleh jawaban tersebut.
-    </div>
-
-    <h4>1. Task Analysis (Analisis Tugas)</h4>
-    <p>Tuliskan informasi yang diketahui dan ditanyakan.</p>
-    <textarea id="rmt-input" placeholder="Informasi yang diketahui dan ditanyakan..."></textarea>
-
-    <h4>2. Planning of Action (Rencana Penyelesaian)</h4>
-    <p>Tuliskan rencana penyelesaianmu.</p>
-    <textarea id="rmt-plan" placeholder="Tuliskan rencana penyelesaian..."></textarea>
-
-    <h4>3. Penyelesaian</h4>
-    <p>Tuliskan perhitungan kelompok A dan B.</p>
-    <textarea id="rmt-answer" placeholder="Tuliskan perhitungan dan jawabanmu..."></textarea>
-
-    <div class="tombol-aksi">
-        <button type="button" onclick="periksaRMT()">
-            Periksa Jawaban
-        </button>
-    </div>
-
-    <div id="rmt-feedback" class="hasil-jawaban" aria-live="polite"></div>
-
-    <div id="rmt-hint" class="catatan" hidden>
-        <strong>Petunjuk Bertahap</strong>
-        <p id="rmt-hint-text"></p>
-    </div>
-
-    <div class="tombol-aksi">
-        <button type="button" onclick="tampilkanPetunjukRMT()">
-            Petunjuk Berikutnya
-        </button>
-    </div>
-
-    <h4>4. Reflection (Refleksi)</h4>
-    <p>Apa yang kamu pelajari dari aktivitas ini?</p>
-    <textarea id="rmt-reflection" placeholder="Tuliskan refleksimu..."></textarea>
-
-    <div class="tombol-aksi">
-        <button type="button" onclick="simpanJawabanRMT()">
-            Simpan Jawaban RMT
-        </button>
-    </div>
-</div>
-
-
-</section>
     <section id="contoh">
-        <h2>Contoh Soal dan Pembahasan</h2>
+        <h2>2. Contoh Soal dan Pembahasan</h2>
 
-        <div class="contoh">
-            <span class="label-soal">CONTOH 1</span>
-            <h3>Menentukan Suku ke-10 Bilangan Ganjil</h3>
-            <p><strong>Soal:</strong> Tentukan suku ke-10 dari pola bilangan ganjil!</p>
-            <p><strong>Diketahui:</strong></p>
-            <ul>
-                <li>n = 10</li>
-                <li>Rumus bilangan ganjil: U<sub>n</sub> = 2n - 1</li>
-            </ul>
-            <p><strong>Penyelesaian:</strong></p>
-            <p>U<sub>n</sub> = 2n - 1</p>
-            <p>U<sub>10</sub> = 2(10) - 1</p>
-            <p>U<sub>10</sub> = 20 - 1</p>
-            <div class="jawaban">Jadi, suku ke-10 adalah 19.</div>
-        </div>
+        <h3>Contoh 1</h3>
+        <p>Tentukan lima suku pertama pola bilangan ganjil!</p>
+        <p><strong>Penyelesaian:</strong></p>
+        <p>1, 3, 5, 7, 9</p>
 
-        <div class="contoh">
-            <span class="label-soal">CONTOH 2</span>
-            <h3>Menentukan Suku ke-12 Bilangan Genap</h3>
-            <p><strong>Soal:</strong> Tentukan suku ke-12 dari pola bilangan genap!</p>
-            <p><strong>Diketahui:</strong></p>
-            <ul>
-                <li>n = 12</li>
-                <li>Rumus bilangan genap: U<sub>n</sub> = 2n</li>
-            </ul>
-            <p><strong>Penyelesaian:</strong></p>
-            <p>U<sub>n</sub> = 2n</p>
-            <p>U<sub>12</sub> = 2(12)</p>
-            <div class="jawaban">Jadi, suku ke-12 adalah 24.</div>
-        </div>
+        <h3>Contoh 2</h3>
+        <p>Tentukan enam suku pertama pola bilangan genap!</p>
+        <p><strong>Penyelesaian:</strong></p>
+        <p>2, 4, 6, 8, 10, 12</p>
+
+        <h3>Contoh 3</h3>
+        <p>Tentukan suku ke-15 bilangan ganjil!</p>
+        <p><strong>Penyelesaian:</strong></p>
+        <p>Un = 2n - 1</p>
+        <p>U15 = 2(15) - 1 = 29</p>
     </section>
 
     <section id="latihan">
-        <h2>Latihan Soal</h2>
-        <p>
-            Kerjakan lima soal berikut berdasarkan materi
-            yang telah dipelajari. Bacalah setiap pertanyaan
-            dengan teliti sebelum menjawab.
-        </p>
+        <h2>3. Latihan Soal</h2>
+        <p>Isilah semua jawaban berikut, kemudian tekan tombol Periksa Jawaban.</p>
 
-        <div class="progress-box">
-            <div class="progress-text">
-                <span>Latihan pembelajaran</span>
-                <span id="progress-text">0 dari 5 dijawab</span>
-            </div>
+        <div class="progress-container">
+            <p id="progress-text">0 dari 5 dijawab</p>
             <div class="progress-track">
-                <div id="progress-bar"></div>
+                <div id="progress-bar" class="progress-bar"></div>
             </div>
         </div>
 
         <div class="soal">
-            <span class="label-soal">SOAL 01</span>
-            <label for="jawaban1">
-                Tentukan 5 suku pertama dari pola bilangan ganjil!
-            </label>
-            <input id="jawaban1" type="text"
-                placeholder="Contoh: 1, 3, 5, 7, 9">
+            <label for="jawaban1">1. Tuliskan lima suku pertama bilangan ganjil!</label>
+            <input id="jawaban1" type="text" placeholder="Contoh: 1,3,5,7,9">
         </div>
 
         <div class="soal">
-            <span class="label-soal">SOAL 02</span>
-            <label for="jawaban2">
-                Tentukan 6 suku pertama dari pola bilangan genap!
-            </label>
-            <input id="jawaban2" type="text"
-                placeholder="Masukkan enam bilangan">
+            <label for="jawaban2">2. Tuliskan enam suku pertama bilangan genap!</label>
+            <input id="jawaban2" type="text" placeholder="Contoh: 2,4,6,8,10,12">
         </div>
 
         <div class="soal">
-            <span class="label-soal">SOAL 03</span>
-            <label for="jawaban3">
-                Tentukan suku ke-15 dari pola bilangan ganjil!
-            </label>
-            <input id="jawaban3" type="number"
-                placeholder="Masukkan jawaban">
+            <label for="jawaban3">3. Tentukan suku ke-15 bilangan ganjil!</label>
+            <input id="jawaban3" type="text" placeholder="Masukkan jawaban">
         </div>
 
         <div class="soal">
-            <span class="label-soal">SOAL 04</span>
-            <label for="jawaban4">
-                Tentukan suku ke-20 dari pola bilangan genap!
-            </label>
-            <input id="jawaban4" type="number"
-                placeholder="Masukkan jawaban">
+            <label for="jawaban4">4. Tentukan suku ke-20 bilangan genap!</label>
+            <input id="jawaban4" type="text" placeholder="Masukkan jawaban">
         </div>
 
         <div class="soal">
-            <span class="label-soal">SOAL 05</span>
             <label for="jawaban5">
-                Apakah hasil perkalian bilangan ganjil dengan
-                bilangan genap selalu genap? Jelaskan alasanmu!
+                5. Mengapa hasil perkalian bilangan ganjil dengan bilangan genap selalu genap?
             </label>
-            <textarea id="jawaban5"
-                placeholder="Tuliskan jawaban dan alasanmu di sini..."></textarea>
+            <textarea id="jawaban5" rows="3" placeholder="Tuliskan alasanmu..."></textarea>
         </div>
 
-        <button onclick="periksaJawaban()">
-            Periksa Jawaban
-        </button>
+        <div class="tombol-aksi">
+            <button type="button" id="btn-periksa-latihan">Periksa Jawaban</button>
+            <button type="button" id="btn-reset-latihan">Ulangi Latihan</button>
+        </div>
 
-        <button class="tombol-reset" onclick="resetJawaban()">
-            Ulangi Latihan
-        </button>
-
-        <div id="hasil-latihan"></div>
+        <div id="hasil-latihan" class="hasil-jawaban" aria-live="polite"></div>
     </section>
 
-
-<!-- TES LITERASI MATEMATIS -->
-
-<section id="tes-literasi">
-    <h2>Tes Literasi Matematis</h2>
-
-    <p>
-        Tes ini digunakan untuk mengetahui kemampuan literasi
-        matematis siswa pada materi pola bilangan ganjil dan genap.
-        Jawablah setiap pertanyaan melalui tahapan penyelesaian
-        yang telah disediakan.
-    </p>
-
-    <div class="catatan">
-        <strong>Petunjuk Pengerjaan</strong>
-        <ul>
-            <li>Bacalah soal dengan teliti.</li>
-            <li>Isi jawaban pada setiap tahapan secara berurutan.</li>
-            <li>Tuliskan proses berpikir dan perhitunganmu.</li>
-            <li>Kerjakan secara mandiri tanpa bantuan AI.</li>
-            <li>Skor maksimal seluruh soal adalah 30.</li>
-        </ul>
-    </div>
-
-    <!-- INDIKATOR 1 -->
-    <div class="materi-box">
-        <h3>Indikator 1: Mathematical Reasoning</h3>
+    <section id="literasi">
+        <h2>4. Tes Literasi Matematis</h2>
         <p>
-            Kemampuan membandingkan pola, memeriksa pernyataan,
-            memberikan alasan, dan menentukan kesimpulan.
+            Jawablah setiap tahapan untuk melatih kemampuan memahami
+            masalah, menyusun strategi, menggunakan konsep matematika,
+            dan memberikan kesimpulan.
         </p>
 
-        <div class="soal">
-            <span class="label-soal">SOAL 1 — SKOR MAKSIMAL 6</span>
+        <h3>Soal 1</h3>
+        <p>
+            Perhatikan pola bilangan ganjil berikut:
+            1, 3, 5, 7, ...
+        </p>
+        <label for="l1t1">Tahap 1. Apa pola yang kamu amati?</label>
+        <textarea id="l1t1" rows="2"></textarea>
+        <label for="l1t2">Tahap 2. Bagaimana aturan pembentukannya?</label>
+        <textarea id="l1t2" rows="2"></textarea>
 
-            <p>
-                Dua siswa mengamati pola bilangan. Dita menyatakan
-                pola 1, 3, 5, 7, ... bertambah 2 sehingga suku
-                berikutnya 9. Roni menyatakan pola 2, 4, 6, 8, ...
-                bertambah 2 sehingga suku berikutnya 10.
-                Apakah kedua pernyataan benar? Jelaskan hubungan
-                kedua pola dan alasanmu.
-            </p>
+        <h3>Soal 2</h3>
+        <p>Perhatikan pola bilangan genap: 2, 4, 6, 8, ...</p>
+        <label for="l2t1">Tahap 1. Jelaskan pola tersebut!</label>
+        <textarea id="l2t1" rows="2"></textarea>
+        <label for="l2t2">Tahap 2. Tentukan tiga suku berikutnya!</label>
+        <textarea id="l2t2" rows="2"></textarea>
 
-            <p><strong>Tahap 1 — Mengidentifikasi pola (1 poin)</strong></p>
-            <label for="l1t1">Identifikasi pola yang bertambah 2.</label>
-            <textarea id="l1t1" rows="2"
-                placeholder="Tuliskan hasil identifikasi..."></textarea>
+        <h3>Soal 3</h3>
+        <p>Bagaimana menentukan suku ke-10 bilangan ganjil?</p>
+        <label for="l3t1">Tahap 1. Tuliskan rumus yang digunakan!</label>
+        <textarea id="l3t1" rows="2"></textarea>
+        <label for="l3t2">Tahap 2. Tunjukkan perhitungannya!</label>
+        <textarea id="l3t2" rows="2"></textarea>
 
-            <p><strong>Tahap 2 — Menentukan suku berikutnya (2 poin)</strong></p>
-            <label for="l1t2">Tentukan suku berikutnya dari kedua pola.</label>
-            <textarea id="l1t2" rows="2"
-                placeholder="Tuliskan kedua suku berikutnya..."></textarea>
+        <h3>Soal 4</h3>
+        <p>Bagaimana menentukan suku ke-12 bilangan genap?</p>
+        <label for="l4t1">Tahap 1. Tuliskan rumusnya!</label>
+        <textarea id="l4t1" rows="2"></textarea>
+        <label for="l4t2">Tahap 2. Tunjukkan perhitungannya!</label>
+        <textarea id="l4t2" rows="2"></textarea>
 
-            <p><strong>Tahap 3 — Menjelaskan jenis pola (1 poin)</strong></p>
-            <label for="l1t3">Jelaskan pola ganjil dan pola genap tersebut.</label>
-            <textarea id="l1t3" rows="2"
-                placeholder="Tuliskan penjelasanmu..."></textarea>
+        <h3>Soal 5</h3>
+        <p>
+            Jelaskan hubungan pola bilangan ganjil dan genap
+            dalam kehidupan sehari-hari!
+        </p>
+        <label for="l5t1">Tahap 1. Berikan contoh situasi!</label>
+        <textarea id="l5t1" rows="2"></textarea>
+        <label for="l5t2">Tahap 2. Jelaskan hubungan matematikanya!</label>
+        <textarea id="l5t2" rows="2"></textarea>
 
-            <p><strong>Tahap 4 — Menentukan kebenaran (1 poin)</strong></p>
-            <label for="l1t4">Apakah kedua pernyataan benar?</label>
-            <textarea id="l1t4" rows="2"
-                placeholder="Tuliskan keputusanmu..."></textarea>
-
-            <p><strong>Tahap 5 — Memberikan alasan (1 poin)</strong></p>
-            <label for="l1t5">
-                Mengapa penambahan 2 mempertahankan jenis bilangan ganjil
-                atau genap?
-            </label>
-            <textarea id="l1t5" rows="3"
-                placeholder="Jelaskan alasan matematisnya..."></textarea>
+        <div class="tombol-aksi">
+            <button type="button" id="btn-simpan-literasi">Simpan Jawaban Literasi</button>
         </div>
-    </div>
+    </section>
 
-    <!-- INDIKATOR 2 -->
-    <div class="materi-box">
-        <h3>Indikator 2: Formulating Situations Mathematically</h3>
+    <section id="rmt">
+        <h2>5. Aktivitas RMT (Realistic Mathematics Thinking)</h2>
+
+        <h3>Permasalahan: Kartu Bilangan</h3>
         <p>
-            Kemampuan mengenali informasi, menentukan variabel,
-            dan mengubah situasi menjadi model matematika.
+            Dua kelompok siswa menyusun kartu bilangan. Kelompok A
+            menyusun bilangan ganjil, sedangkan kelompok B menyusun
+            bilangan genap. Kedua kelompok melanjutkan pola dengan
+            menambahkan 2 pada setiap suku.
+        </p>
+        <p>
+            Tentukan bilangan pada posisi ke-8 dari masing-masing kelompok.
+            Jelaskan informasi yang diketahui, rencana penyelesaian,
+            perhitungan, dan kesimpulanmu.
         </p>
 
-        <div class="soal">
-            <span class="label-soal">SOAL 2 — SKOR MAKSIMAL 6</span>
+        <h3>1. Analisis Masalah</h3>
+        <label for="rmt-input">Tuliskan informasi yang diketahui dan ditanyakan:</label>
+        <textarea id="rmt-input" rows="4" placeholder="Informasi yang diketahui dan ditanyakan..."></textarea>
 
-            <p>
-                Panitia membuat nomor kartu untuk dua kelompok.
-                Kelompok A menggunakan nomor ganjil mulai dari 1,
-                sedangkan kelompok B menggunakan nomor genap mulai
-                dari 2. Setiap kelompok menambahkan 2 nomor setiap
-                tahap. Buat model matematika untuk nomor pada tahap
-                ke-n masing-masing kelompok, lalu tentukan nomor
-                pada tahap ke-8.
-            </p>
+        <h3>2. Rencana Penyelesaian</h3>
+        <label for="rmt-plan">Tuliskan rencana penyelesaian:</label>
+        <textarea id="rmt-plan" rows="4" placeholder="Tuliskan rencana penyelesaian..."></textarea>
 
-            <p><strong>Tahap 1 — Mengidentifikasi pola (1 poin)</strong></p>
-            <label for="l2t1">Tuliskan pola kelompok A dan kelompok B.</label>
-            <textarea id="l2t1" rows="2"
-                placeholder="Pola kelompok A dan B..."></textarea>
+        <h3>3. Penyelesaian</h3>
+        <label for="rmt-answer">Tuliskan perhitungan dan jawabanmu:</label>
+        <textarea id="rmt-answer" rows="5" placeholder="Tuliskan perhitungan dan jawabanmu..."></textarea>
 
-            <p><strong>Tahap 2 — Menentukan variabel (1 poin)</strong></p>
-            <label for="l2t2">Apa arti variabel n dalam soal?</label>
-            <textarea id="l2t2" rows="2"
-                placeholder="Jelaskan arti n..."></textarea>
-
-            <p><strong>Tahap 3 — Model kelompok A (1 poin)</strong></p>
-            <label for="l2t3">Buat rumus matematika kelompok A.</label>
-            <textarea id="l2t3" rows="2"
-                placeholder="Tuliskan model matematika..."></textarea>
-
-            <p><strong>Tahap 4 — Model kelompok B (1 poin)</strong></p>
-            <label for="l2t4">Buat rumus matematika kelompok B.</label>
-            <textarea id="l2t4" rows="2"
-                placeholder="Tuliskan model matematika..."></textarea>
-
-            <p><strong>Tahap 5 — Menghitung kelompok A (1 poin)</strong></p>
-            <label for="l2t5">Tentukan nomor kelompok A pada tahap ke-8.</label>
-            <textarea id="l2t5" rows="2"
-                placeholder="Tuliskan perhitungan..."></textarea>
-
-            <p><strong>Tahap 6 — Menghitung kelompok B (1 poin)</strong></p>
-            <label for="l2t6">Tentukan nomor kelompok B pada tahap ke-8.</label>
-            <textarea id="l2t6" rows="2"
-                placeholder="Tuliskan perhitungan..."></textarea>
+        <div class="tombol-aksi">
+            <button type="button" id="btn-periksa-rmt">Periksa Jawaban</button>
         </div>
-    </div>
 
-    <!-- INDIKATOR 3 - SOAL 3 -->
-    <div class="materi-box">
-        <h3>
-            Indikator 3: Employing Mathematical Concepts,
-            Facts, and Procedures
-        </h3>
-        <p>
-            Kemampuan memilih rumus dan melakukan prosedur
-            perhitungan secara tepat.
-        </p>
+        <div id="rmt-feedback" class="hasil-jawaban" aria-live="polite"></div>
 
-        <div class="soal">
-            <span class="label-soal">SOAL 3 — SKOR MAKSIMAL 6</span>
-
-            <p>
-                Diketahui rumus suku ke-n bilangan ganjil
-                Uₙ = 2n − 1 dan rumus suku ke-n bilangan genap
-                Uₙ = 2n. Tentukan suku ke-15 bilangan ganjil
-                dan suku ke-20 bilangan genap. Tunjukkan langkah
-                perhitunganmu.
-            </p>
-
-            <p><strong>Tahap 1 — Rumus bilangan ganjil (1 poin)</strong></p>
-            <label for="l3t1">Tuliskan rumus suku ke-n bilangan ganjil.</label>
-            <textarea id="l3t1" rows="2"
-                placeholder="Tuliskan rumus..."></textarea>
-
-            <p><strong>Tahap 2 — Perhitungan ganjil (2 poin)</strong></p>
-            <label for="l3t2">Hitung suku ke-15 bilangan ganjil.</label>
-            <textarea id="l3t2" rows="3"
-                placeholder="Tuliskan langkah perhitungan..."></textarea>
-
-            <p><strong>Tahap 3 — Rumus bilangan genap (1 poin)</strong></p>
-            <label for="l3t3">Tuliskan rumus suku ke-n bilangan genap.</label>
-            <textarea id="l3t3" rows="2"
-                placeholder="Tuliskan rumus..."></textarea>
-
-            <p><strong>Tahap 4 — Perhitungan genap (2 poin)</strong></p>
-            <label for="l3t4">Hitung suku ke-20 bilangan genap.</label>
-            <textarea id="l3t4" rows="3"
-                placeholder="Tuliskan langkah perhitungan..."></textarea>
+        <div id="rmt-hint" class="catatan" hidden>
+            <h3>Petunjuk Bertahap</h3>
+            <p id="rmt-hint-text"></p>
         </div>
-    </div>
 
-    <!-- INDIKATOR 4 -->
-    <div class="materi-box">
-        <h3>
-            Indikator 4: Interpreting, Applying, and Evaluating
-            Mathematical Outcomes
-        </h3>
-        <p>
-            Kemampuan menafsirkan hasil, memeriksa kewajaran,
-            dan memberikan keputusan berdasarkan konsep matematika.
-        </p>
-
-        <div class="soal">
-            <span class="label-soal">SOAL 4 — SKOR MAKSIMAL 6</span>
-
-            <p>
-                Andi menyatakan bahwa hasil penjumlahan satu bilangan
-                ganjil dan satu bilangan genap selalu ganjil.
-                Beni memberi contoh 5 + 8 = 13. Apakah contoh Beni
-                mendukung pernyataan tersebut? Jelaskan makna hasilnya
-                dan berikan satu contoh lain untuk memeriksa kesimpulan.
-            </p>
-
-            <p><strong>Tahap 1 — Mengidentifikasi pernyataan (1 poin)</strong></p>
-            <label for="l4t1">Pernyataan apa yang sedang diperiksa?</label>
-            <textarea id="l4t1" rows="2"
-                placeholder="Tuliskan pernyataannya..."></textarea>
-
-            <p><strong>Tahap 2 — Memeriksa perhitungan (1 poin)</strong></p>
-            <label for="l4t2">Periksa hasil penjumlahan 5 + 8.</label>
-            <textarea id="l4t2" rows="2"
-                placeholder="Tuliskan hasil perhitungan..."></textarea>
-
-            <p><strong>Tahap 3 — Menafsirkan hasil (1 poin)</strong></p>
-            <label for="l4t3">Apa arti bilangan 13 dalam konteks ganjil dan genap?</label>
-            <textarea id="l4t3" rows="2"
-                placeholder="Tuliskan penafsiranmu..."></textarea>
-
-            <p><strong>Tahap 4 — Mengevaluasi contoh (1 poin)</strong></p>
-            <label for="l4t4">
-                Apakah satu contoh sudah cukup untuk membuktikan aturan umum?
-                Jelaskan.
-            </label>
-            <textarea id="l4t4" rows="3"
-                placeholder="Tuliskan penilaianmu..."></textarea>
-
-            <p><strong>Tahap 5 — Memberikan contoh lain (1 poin)</strong></p>
-            <label for="l4t5">Berikan satu contoh penjumlahan lainnya.</label>
-            <textarea id="l4t5" rows="2"
-                placeholder="Tuliskan contoh..."></textarea>
-
-            <p><strong>Tahap 6 — Menarik kesimpulan (1 poin)</strong></p>
-            <label for="l4t6">
-                Apa kesimpulanmu tentang penjumlahan bilangan ganjil
-                dan genap?
-            </label>
-            <textarea id="l4t6" rows="3"
-                placeholder="Tuliskan kesimpulan..."></textarea>
+        <div class="tombol-aksi">
+            <button type="button" id="btn-petunjuk-rmt">Petunjuk Berikutnya</button>
         </div>
-    </div>
 
-    <!-- INDIKATOR 3 - SOAL 5 -->
-    <div class="materi-box">
-        <h3>
-            Indikator 3: Employing Mathematical Concepts,
-            Facts, and Procedures
-        </h3>
+        <h3>4. Refleksi</h3>
+        <label for="rmt-reflection">Tuliskan refleksimu setelah menyelesaikan masalah:</label>
+        <textarea id="rmt-reflection" rows="4" placeholder="Tuliskan refleksimu..."></textarea>
 
-        <div class="soal">
-            <span class="label-soal">SOAL 5 — SKOR MAKSIMAL 6</span>
-
-            <p>
-                Dalam sebuah permainan, kartu bernomor ganjil disusun
-                berurutan mulai dari 1, sedangkan kartu bernomor genap
-                disusun berurutan mulai dari 2. Rara menemukan kartu
-                bernomor 37 dan 42. Tentukan kartu 37 merupakan suku
-                ke berapa pada pola bilangan ganjil dan kartu 42
-                merupakan suku ke berapa pada pola bilangan genap.
-                Tunjukkan cara menentukan posisinya.
-            </p>
-
-            <p><strong>Tahap 1 — Menuliskan rumus (1 poin)</strong></p>
-            <label for="l5t1">Tuliskan rumus pola ganjil dan genap.</label>
-            <textarea id="l5t1" rows="2"
-                placeholder="Tuliskan kedua rumus..."></textarea>
-
-            <p><strong>Tahap 2 — Persamaan bilangan 37 (1 poin)</strong></p>
-            <label for="l5t2">Buat persamaan untuk menentukan posisi 37.</label>
-            <textarea id="l5t2" rows="2"
-                placeholder="Tuliskan persamaan..."></textarea>
-
-            <p><strong>Tahap 3 — Menentukan posisi 37 (1 poin)</strong></p>
-            <label for="l5t3">Selesaikan persamaan untuk memperoleh n.</label>
-            <textarea id="l5t3" rows="2"
-                placeholder="Tuliskan penyelesaian..."></textarea>
-
-            <p><strong>Tahap 4 — Persamaan bilangan 42 (1 poin)</strong></p>
-            <label for="l5t4">Buat persamaan untuk menentukan posisi 42.</label>
-            <textarea id="l5t4" rows="2"
-                placeholder="Tuliskan persamaan..."></textarea>
-
-            <p><strong>Tahap 5 — Menentukan posisi 42 (1 poin)</strong></p>
-            <label for="l5t5">Selesaikan persamaan untuk memperoleh n.</label>
-            <textarea id="l5t5" rows="2"
-                placeholder="Tuliskan penyelesaian..."></textarea>
-
-            <p><strong>Tahap 6 — Menarik kesimpulan (1 poin)</strong></p>
-            <label for="l5t6">
-                Tentukan posisi kartu 37 dan 42 pada masing-masing pola.
-            </label>
-            <textarea id="l5t6" rows="2"
-                placeholder="Tuliskan kesimpulan..."></textarea>
-        </div>
-    </div>
-
-    <div class="catatan">
-        <h3>Rekapitulasi Skor</h3>
-        <table>
-            <tr>
-                <th>Nomor Soal</th>
-                <th>Skor Maksimal</th>
-            </tr>
-            <tr><td>Soal 1</td><td>6</td></tr>
-            <tr><td>Soal 2</td><td>6</td></tr>
-            <tr><td>Soal 3</td><td>6</td></tr>
-            <tr><td>Soal 4</td><td>6</td></tr>
-            <tr><td>Soal 5</td><td>6</td></tr>
-            <tr><th>Total</th><th>30</th></tr>
-        </table>
-        <p>
-            Penilaian dilakukan berdasarkan ketepatan setiap tahapan
-            penyelesaian sesuai rubrik instrumen. Skor parsial diberikan
-            apabila siswa menunjukkan proses berpikir yang benar
-            meskipun terdapat kesalahan pada tahap berikutnya.
-        </p>
-        <p>
-            Nilai akhir = (Skor perolehan / 30) × 100.
-        </p>
-    </div>
-<div class="tombol-aksi">
-    <button type="button" onclick="simpanJawabanLiterasi()">
-        Simpan Jawaban
-    </button>
-</div>
-</section>
-
-
-    <section id="kesimpulan">
-        <h2>Kesimpulan Pembelajaran</h2>
-        <ul>
-            <li>Rumus bilangan ganjil adalah U<sub>n</sub> = 2n - 1.</li>
-            <li>Rumus bilangan genap adalah U<sub>n</sub> = 2n.</li>
-            <li>Kedua pola memiliki selisih 2 antarsuku.</li>
-            <li>Bilangan ganjil tidak habis dibagi 2.</li>
-            <li>Bilangan genap habis dibagi 2.</li>
-            <li>Operasi penjumlahan dan perkalian memiliki sifat tertentu terhadap bilangan ganjil dan genap.</li>
-        </ul>
-        <div class="catatan">
-            Terus berlatih agar semakin memahami pola bilangan!
+        <div class="tombol-aksi">
+            <button type="button" id="btn-simpan-rmt">Simpan Jawaban RMT</button>
         </div>
     </section>
 
 </main>
 
 <footer>
-    <h3>MathLearn</h3>
-    <p>Media Pembelajaran Matematika SMP</p>
-    <p>Materi Pola Bilangan Ganjil dan Genap</p>
+    <p>MathLearn - Media Pembelajaran Pola Bilangan Ganjil dan Genap</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="./script.js" defer></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const hubungkan = (id, fungsi) => {
+        const tombol = document.getElementById(id);
+        if (tombol && typeof fungsi === "function") {
+            tombol.addEventListener("click", fungsi);
+        }
+    };
+
+    hubungkan("btn-periksa-latihan", window.periksaJawaban);
+    hubungkan("btn-reset-latihan", window.resetJawaban);
+    hubungkan("btn-simpan-literasi", window.simpanJawabanLiterasi);
+
+    hubungkan("btn-periksa-rmt", window.periksaRMT);
+    hubungkan("btn-petunjuk-rmt", window.tampilkanPetunjukRMT);
+    hubungkan("btn-simpan-rmt", window.simpanJawabanRMT);
+});
+</script>
+
 </body>
 </html>
