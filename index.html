@@ -295,6 +295,7 @@
         </div>
 
 
+
 <div class="materi-box" id="aktivitas-berpikir-rmt">
     <span class="label-soal">AKTIVITAS BERPIKIR RMT</span>
     <h3>Ayo, Selesaikan Tantangan!</h3>
@@ -313,28 +314,16 @@
     </div>
 
     <h4>1. Task Analysis (Analisis Tugas)</h4>
-    <p>
-        Amati permasalahan. Tuliskan informasi yang diketahui
-        dan hal yang harus kamu tentukan.
-    </p>
-    <textarea id="rmt-input"
-        placeholder="Informasi yang diketahui dan yang ditanyakan..."></textarea>
+    <p>Tuliskan informasi yang diketahui dan ditanyakan.</p>
+    <textarea id="rmt-input" placeholder="Informasi yang diketahui dan ditanyakan..."></textarea>
 
     <h4>2. Planning of Action (Rencana Penyelesaian)</h4>
-    <p>
-        Susun langkah penyelesaian. Kamu dapat menuliskan pola
-        bilangan, aturan penambahan, atau rumus yang akan digunakan.
-    </p>
-    <textarea id="rmt-plan"
-        placeholder="Tuliskan rencana dan langkah penyelesaianmu..."></textarea>
+    <p>Tuliskan rencana penyelesaianmu.</p>
+    <textarea id="rmt-plan" placeholder="Tuliskan rencana penyelesaian..."></textarea>
 
     <h4>3. Penyelesaian</h4>
-    <p>
-        Tuliskan hasil perhitungan nomor kartu kelompok A dan B
-        pada tahap ke-8.
-    </p>
-    <textarea id="rmt-answer"
-        placeholder="Tuliskan perhitungan dan jawabanmu..."></textarea>
+    <p>Tuliskan perhitungan kelompok A dan B.</p>
+    <textarea id="rmt-answer" placeholder="Tuliskan perhitungan dan jawabanmu..."></textarea>
 
     <div class="tombol-aksi">
         <button type="button" onclick="periksaRMT()">
@@ -347,18 +336,17 @@
     <div id="rmt-hint" class="catatan" hidden>
         <strong>Petunjuk Bertahap</strong>
         <p id="rmt-hint-text"></p>
+    </div>
+
+    <div class="tombol-aksi">
         <button type="button" onclick="tampilkanPetunjukRMT()">
             Petunjuk Berikutnya
         </button>
     </div>
 
     <h4>4. Reflection (Refleksi)</h4>
-    <p>
-        Apa yang kamu pelajari dari aktivitas ini?
-        Apakah ada cara lain untuk menemukan nomor kartu tahap ke-8?
-    </p>
-    <textarea id="rmt-reflection"
-        placeholder="Tuliskan refleksi dan pemahamanmu..."></textarea>
+    <p>Apa yang kamu pelajari dari aktivitas ini?</p>
+    <textarea id="rmt-reflection" placeholder="Tuliskan refleksimu..."></textarea>
 
     <div class="tombol-aksi">
         <button type="button" onclick="simpanJawabanRMT()">
@@ -368,32 +356,7 @@
 </div>
 
 
-    <h3>1. Task Analysis (Memahami Masalah)</h3>
-    <p>Identifikasi informasi yang diketahui dan hal yang ditanyakan.</p>
-    <label for="rmt-input">Tuliskan informasi yang diketahui dan ditanyakan:</label>
-    <textarea id="rmt-input" rows="4"
-        placeholder="Diketahui: ...&#10;Ditanyakan: ..."></textarea>
-
-    <h3>2. Planning of Action (Merencanakan Penyelesaian)</h3>
-    <p>Tentukan pola dan rumus yang akan digunakan.</p>
-    <label for="rmt-plan">Tuliskan rencana penyelesaianmu:</label>
-    <textarea id="rmt-plan" rows="4"
-        placeholder="Saya akan menggunakan rumus ... karena ..."></textarea>
-
-    <h3>3. Reflection (Refleksi)</h3>
-    <p>Periksa hasil dan jelaskan alasan jawabanmu.</p>
-    <label for="rmt-reflection">Tuliskan hasil dan refleksimu:</label>
-    <textarea id="rmt-reflection" rows="4"
-        placeholder="Hasil yang saya peroleh ...&#10;Saya yakin karena ..."></textarea>
-
-    <div class="catatan">
-        <strong>Ingat:</strong>
-        Perhatikan kembali informasi, rumus, langkah perhitungan,
-        dan kesesuaian hasil yang kamu peroleh.
-    </div>
-</div>
-    </section>
-
+</section>
     <section id="contoh">
         <h2>Contoh Soal dan Pembahasan</h2>
 

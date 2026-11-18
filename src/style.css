@@ -454,3 +454,53 @@ footer p {
         font-size: 17px;
     }
 }
+.tombol-aksi {
+    position: relative;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+.tombol-aksi button {
+    position: relative;
+    z-index: 10000;
+    pointer-events: auto;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+}
+#aktivitas-berpikir-rmt {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+#aktivitas-berpikir-rmt .tombol-aksi {
+    position: relative;
+    z-index: 99999;
+    pointer-events: auto;
+}
+
+#aktivitas-berpikir-rmt button {
+    position: relative;
+    z-index: 99999;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+#aktivitas-berpikir-rmt {
+    position: relative !important;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+}
+
+#aktivitas-berpikir-rmt .tombol-aksi {
+    position: relative !important;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+}
+
+#aktivitas-berpikir-rmt button {
+    position: relative !important;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
