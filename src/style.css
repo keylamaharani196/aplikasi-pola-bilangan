@@ -999,3 +999,42 @@ button {
     margin: 8px 0;
     color: #655486;
 }
+.footer-mathlearn {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 40px 0 0;
+    padding: 35px 20px;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(120deg, #718bd0, #9881d1);
+    border-radius: 24px 24px 0 0;
+    overflow: hidden;
+}
+
+.footer-mathlearn .footer-line {
+    width: 65px;
+    height: 4px;
+    margin: 0 auto 25px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.footer-mathlearn h2 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 21px;
+}
+
+.footer-mathlearn p {
+    margin: 10px 0;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footer-mathlearn .footer-copyright {
+    margin-top: 18px;
+}
