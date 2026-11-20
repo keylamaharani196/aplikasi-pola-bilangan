@@ -4,216 +4,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Media pembelajaran interaktif pola bilangan ganjil dan genap untuk siswa SMP.">
-    <title>MathLearn - Pola Bilangan Ganjil dan Genap</title>
+    <meta name="description" content="MathLearn adalah media pembelajaran interaktif pola bilangan ganjil dan genap untuk siswa SMP.">
+    <title>MathLearn | Belajar Pola Bilangan</title>
     <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
 
-<header>
-    <h1>MathLearn</h1>
-    <p>Media Pembelajaran Pola Bilangan Ganjil dan Genap</p>
+<!-- HEADER -->
+<header class="hero" id="beranda">
+    <div class="hero-content">
+        <span class="hero-label">✦ MEDIA PEMBELAJARAN MATEMATIKA ✦</span>
+        <h1>MathLearn</h1>
+        <p>Petualangan Seru Mengenal Pola Bilangan Ganjil dan Genap</p>
+        <p class="hero-description">
+            Belajar matematika menjadi lebih mudah, menyenangkan,
+            dan interaktif bersama MathLearn.
+        </p>
+        <a href="#materi" class="hero-button">Mulai Belajar ✨</a>
+    </div>
+    <div class="hero-decoration decoration-one">✿</div>
+    <div class="hero-decoration decoration-two">✧</div>
 </header>
 
-<nav>
-    <a href="#materi">Materi</a>
-    <a href="#contoh">Contoh Soal</a>
-    <a href="#latihan">Latihan</a>
-    <a href="#literasi">Literasi Matematis</a>
-    <a href="#rmt">Aktivitas RMT</a>
+<!-- NAVIGASI -->
+<nav class="main-nav">
+    <a href="#beranda">⌂ Beranda</a>
+    <a href="#materi">📖 Materi</a>
+    <a href="#contoh">✏️ Contoh Soal</a>
+    <a href="#rmt">🧩 Aktivitas RMT</a>
+    <a href="#literasi">📝 Literasi</a>
+    <a href="#latihan">🎯 Latihan Soal</a>
+    <a href="#hasil-refleksi">🌷 Refleksi</a>
 </nav>
 
 <main>
 
+    <!-- BERANDA -->
+    <section class="welcome-section">
+        <div class="welcome-card">
+            <span class="section-label">WELCOME TO MATHLEARN</span>
+            <h2>Halo, Pejuang Matematika! 🌸</h2>
+            <p>
+                Selamat datang di MathLearn. Melalui media pembelajaran ini,
+                kamu akan mempelajari pola bilangan ganjil dan genap,
+                memahami rumus, menyelesaikan permasalahan, serta melatih
+                kemampuan berpikir matematis.
+            </p>
+            <p>
+                Ikuti setiap kegiatan pembelajaran dan jangan takut mencoba.
+                Setiap langkah kecil membantumu memahami matematika lebih baik!
+            </p>
+        </div>
+    </section>
+
+    <!-- MATERI -->
     <section id="materi">
-        <h2>1. Materi Pola Bilangan</h2>
+        <div class="section-heading">
+            <span class="section-label">01 • LEARN</span>
+            <h2>📖 Materi Pola Bilangan</h2>
+            <p>Mengenal konsep dasar pola bilangan ganjil dan genap.</p>
+        </div>
 
-        <h3>A. Pola Bilangan Ganjil</h3>
-        <p>Pola bilangan ganjil dimulai dari 1 dan bertambah 2 pada setiap suku.</p>
-        <p><strong>Contoh:</strong> 1, 3, 5, 7, 9, 11, ...</p>
-        <p><strong>Rumus:</strong> Un = 2n - 1</p>
+        <div class="materi-grid">
+            <article class="materi-card ganjil-card">
+                <div class="materi-icon">🌷</div>
+                <h3>A. Pola Bilangan Ganjil</h3>
+                <p>
+                    Pola bilangan ganjil adalah susunan bilangan yang
+                    dimulai dari 1 dan bertambah 2 pada setiap suku.
+                </p>
+                <div class="angka-pola">
+                    <span>1</span><span>3</span><span>5</span>
+                    <span>7</span><span>9</span>
+                </div>
+                <p><strong>Rumus suku ke-n:</strong></p>
+                <div class="rumus">Un = 2n - 1</div>
+                <p>
+                    Contoh: 1, 3, 5, 7, 9, 11, 13, ...
+                </p>
+            </article>
 
-        <h3>B. Pola Bilangan Genap</h3>
-        <p>Pola bilangan genap dimulai dari 2 dan bertambah 2 pada setiap suku.</p>
-        <p><strong>Contoh:</strong> 2, 4, 6, 8, 10, 12, ...</p>
-        <p><strong>Rumus:</strong> Un = 2n</p>
+            <article class="materi-card genap-card">
+                <div class="materi-icon">🦋</div>
+                <h3>B. Pola Bilangan Genap</h3>
+                <p>
+                    Pola bilangan genap adalah susunan bilangan yang
+                    dimulai dari 2 dan bertambah 2 pada setiap suku.
+                </p>
+                <div class="angka-pola">
+                    <span>2</span><span>4</span><span>6</span>
+                    <span>8</span><span>10</span>
+                </div>
+                <p><strong>Rumus suku ke-n:</strong></p>
+                <div class="rumus">Un = 2n</div>
+                <p>
+                    Contoh: 2, 4, 6, 8, 10, 12, 14, ...
+                </p>
+            </article>
+        </div>
 
-        <h3>C. Perbedaan Pola Ganjil dan Genap</h3>
-        <p>Bilangan ganjil tidak habis dibagi 2, sedangkan bilangan genap habis dibagi 2.</p>
-    </section>
+        <article class="content-card">
+            <h3>C. Perbedaan Pola Bilangan Ganjil dan Genap</h3>
+            <p>
+                Bilangan ganjil merupakan bilangan yang tidak habis dibagi 2,
+                sedangkan bilangan genap merupakan bilangan yang habis dibagi 2.
+            </p>
 
-    <section id="contoh">
-        <h2>2. Contoh Soal dan Pembahasan</h2>
-        <h3>Contoh 1</h3>
-        <p>Tentukan lima suku pertama pola bilangan ganjil!</p>
-        <p><strong>Penyelesaian:</strong> 1, 3, 5, 7, 9</p>
-
-        <h3>Contoh 2</h3>
-        <p>Tentukan enam suku pertama pola bilangan genap!</p>
-        <p><strong>Penyelesaian:</strong> 2, 4, 6, 8, 10, 12</p>
-
-        <h3>Contoh 3</h3>
-        <p>Tentukan suku ke-15 bilangan ganjil!</p>
-        <p><strong>Penyelesaian:</strong> Un = 2n - 1</p>
-        <p>U15 = 2(15) - 1 = 29</p>
-    </section>
-
-    <section id="latihan">
-        <h2>3. Latihan Soal</h2>
-        <p>Isilah semua jawaban berikut, kemudian tekan tombol Periksa Jawaban.</p>
-
-        <div class="progress-container">
-            <p id="progress-text">0 dari 5 dijawab</p>
-            <div class="progress-track">
-                <div id="progress-bar" class="progress-bar"></div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Bilangan Ganjil</th>
+                            <th>Bilangan Genap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bilangan awal</td>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Selisih</td>
+                            <td>2</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Rumus</td>
+                            <td>Un = 2n - 1</td>
+                            <td>Un = 2n</td>
+                        </tr>
+                        <tr>
+                            <td>Contoh</td>
+                            <td>1, 3, 5, 7, ...</td>
+                            <td>2, 4, 6, 8, ...</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
-
-        <div class="soal">
-            <label for="jawaban1">1. Tuliskan lima suku pertama bilangan ganjil!</label>
-            <input id="jawaban1" type="text" placeholder="Contoh: 1,3,5,7,9">
-        </div>
-
-        <div class="soal">
-            <label for="jawaban2">2. Tuliskan enam suku pertama bilangan genap!</label>
-            <input id="jawaban2" type="text" placeholder="Contoh: 2,4,6,8,10,12">
-        </div>
-
-        <div class="soal">
-            <label for="jawaban3">3. Tentukan suku ke-15 bilangan ganjil!</label>
-            <input id="jawaban3" type="text" placeholder="Masukkan jawaban">
-        </div>
-
-        <div class="soal">
-            <label for="jawaban4">4. Tentukan suku ke-20 bilangan genap!</label>
-            <input id="jawaban4" type="text" placeholder="Masukkan jawaban">
-        </div>
-
-        <div class="soal">
-            <label for="jawaban5">5. Mengapa hasil perkalian bilangan ganjil dengan bilangan genap selalu genap?</label>
-            <textarea id="jawaban5" rows="3" placeholder="Tuliskan alasanmu..."></textarea>
-        </div>
-
-        <div class="tombol-aksi">
-            <button type="button" id="btn-periksa-latihan">Periksa Jawaban</button>
-            <button type="button" id="btn-reset-latihan">Ulangi Latihan</button>
-        </div>
-
-        <div id="hasil-latihan" class="hasil-jawaban" aria-live="polite"></div>
+        </article>
     </section>
 
-    <section id="literasi">
-        <h2>4. Tes Literasi Matematis</h2>
-        <p>Jawablah setiap tahapan untuk melatih kemampuan memahami masalah, menyusun strategi, menggunakan konsep matematika, dan memberikan kesimpulan.</p>
-
-        <h3>Soal 1</h3>
-        <p>Perhatikan pola bilangan ganjil: 1, 3, 5, 7, ...</p>
-        <label for="l1t1">Tahap 1. Apa pola yang kamu amati?</label>
-        <textarea id="l1t1" rows="2"></textarea>
-        <label for="l1t2">Tahap 2. Bagaimana aturan pembentukannya?</label>
-        <textarea id="l1t2" rows="2"></textarea>
-
-        <h3>Soal 2</h3>
-        <p>Perhatikan pola bilangan genap: 2, 4, 6, 8, ...</p>
-        <label for="l2t1">Tahap 1. Jelaskan pola tersebut!</label>
-        <textarea id="l2t1" rows="2"></textarea>
-        <label for="l2t2">Tahap 2. Tentukan tiga suku berikutnya!</label>
-        <textarea id="l2t2" rows="2"></textarea>
-
-        <h3>Soal 3</h3>
-        <p>Bagaimana menentukan suku ke-10 bilangan ganjil?</p>
-        <label for="l3t1">Tahap 1. Tuliskan rumus yang digunakan!</label>
-        <textarea id="l3t1" rows="2"></textarea>
-        <label for="l3t2">Tahap 2. Tunjukkan perhitungannya!</label>
-        <textarea id="l3t2" rows="2"></textarea>
-
-        <h3>Soal 4</h3>
-        <p>Bagaimana menentukan suku ke-12 bilangan genap?</p>
-        <label for="l4t1">Tahap 1. Tuliskan rumusnya!</label>
-        <textarea id="l4t1" rows="2"></textarea>
-        <label for="l4t2">Tahap 2. Tunjukkan perhitungannya!</label>
-        <textarea id="l4t2" rows="2"></textarea>
-
-        <h3>Soal 5</h3>
-        <p>Jelaskan hubungan pola bilangan ganjil dan genap dalam kehidupan sehari-hari!</p>
-        <label for="l5t1">Tahap 1. Berikan contoh situasi!</label>
-        <textarea id="l5t1" rows="2"></textarea>
-        <label for="l5t2">Tahap 2. Jelaskan hubungan matematikanya!</label>
-        <textarea id="l5t2" rows="2"></textarea>
-
-        <div class="tombol-aksi">
-            <button type="button" id="btn-simpan-literasi">Simpan Jawaban Literasi</button>
+    <!-- CONTOH SOAL -->
+    <section id="contoh">
+        <div class="section-heading">
+            <span class="section-label">02 • EXAMPLES</span>
+            <h2>✏️ Contoh Soal dan Pembahasan</h2>
+            <p>Pelajari langkah penyelesaian sebelum mengerjakan latihan.</p>
         </div>
+
+        <article class="content-card example-card">
+            <span class="question-number">CONTOH 01</span>
+            <h3>Menentukan Pola Bilangan Ganjil</h3>
+            <p>Tentukan lima suku pertama pola bilangan ganjil!</p>
+            <div class="solution">
+                <strong>Penyelesaian:</strong>
+                <p>Bilangan ganjil dimulai dari 1 dan bertambah 2.</p>
+                <p>1, 1 + 2, 3 + 2, 5 + 2, 7 + 2</p>
+                <div class="answer">1, 3, 5, 7, 9</div>
+            </div>
+        </article>
+
+        <article class="content-card example-card">
+            <span class="question-number">CONTOH 02</span>
+            <h3>Menentukan Pola Bilangan Genap</h3>
+            <p>Tentukan enam suku pertama pola bilangan genap!</p>
+            <div class="solution">
+                <strong>Penyelesaian:</strong>
+                <p>Bilangan genap dimulai dari 2 dan bertambah 2.</p>
+                <div class="answer">2, 4, 6, 8, 10, 12</div>
+            </div>
+        </article>
+
+        <article class="content-card example-card">
+            <span class="question-number">CONTOH 03</span>
+            <h3>Menentukan Suku ke-15 Bilangan Ganjil</h3>
+            <p>Tentukan suku ke-15 dari pola bilangan ganjil!</p>
+            <div class="solution">
+                <strong>Penyelesaian:</strong>
+                <p>Rumus: Un = 2n - 1</p>
+                <p>U15 = 2(15) - 1</p>
+                <p>U15 = 30 - 1</p>
+                <div class="answer">U15 = 29</div>
+            </div>
+        </article>
     </section>
 
-    <section id="rmt">
-        <h2>5. Aktivitas RMT (Realistic Mathematics Thinking)</h2>
+    <!-- AKTIVITAS RMT -->
+    
+<section id="rmt" class="section">
+    <div class="section-heading">
+        <h2>Aktivitas RMT</h2>
+        <p>
+            Ayo latih kemampuan berpikir matematis melalui analisis,
+            perencanaan, penyelesaian, dan refleksi.
+        </p>
+    </div>
 
-        <h3>Permasalahan: Kartu Bilangan</h3>
-        <p>Dua kelompok siswa menyusun kartu bilangan. Kelompok A menyusun bilangan ganjil, sedangkan kelompok B menyusun bilangan genap. Kedua kelompok melanjutkan pola dengan menambahkan 2 pada setiap suku.</p>
-        <p>Tentukan bilangan pada posisi ke-8 dari masing-masing kelompok. Jelaskan informasi yang diketahui, rencana penyelesaian, perhitungan, dan kesimpulanmu.</p>
+    <div class="content-card">
+        <h3>Aktivitas: Kartu Bilangan</h3>
 
-        <h3>1. Analisis Masalah</h3>
-        <label for="rmt-input">Tuliskan informasi yang diketahui dan ditanyakan:</label>
-        <textarea id="rmt-input" rows="4" placeholder="Informasi yang diketahui dan ditanyakan..."></textarea>
+        <p>
+            Sebuah permainan menggunakan dua kelompok kartu bilangan.
+            Kelompok A memiliki kartu 1, 3, 5, 7, ...
+            sedangkan kelompok B memiliki kartu 2, 4, 6, 8, ...
+        </p>
 
-        <h3>2. Rencana Penyelesaian</h3>
-        <label for="rmt-plan">Tuliskan rencana penyelesaian:</label>
-        <textarea id="rmt-plan" rows="4" placeholder="Tuliskan rencana penyelesaian..."></textarea>
+        <p>
+            Setiap kelompok memiliki pola penambahan bilangan yang sama
+            pada setiap tahap. Amati kedua pola tersebut dan tentukan
+            bilangan pada tahap ke-8 dari masing-masing kelompok.
+        </p>
 
-        <h3>3. Penyelesaian</h3>
-        <label for="rmt-answer">Tuliskan perhitungan dan jawabanmu:</label>
-        <textarea id="rmt-answer" rows="5" placeholder="Tuliskan perhitungan dan jawabanmu..."></textarea>
-
-        <div class="tombol-aksi">
-            <button type="button" id="btn-periksa-rmt">Periksa Jawaban</button>
+        <div class="literasi-tahap">
+            <h4>1. Task Analysis (Analisis Tugas)</h4>
+            <p>
+                Informasi apa yang diketahui? Apa yang ditanyakan?
+                Bagaimana hubungan antara kedua pola bilangan tersebut?
+            </p>
+            <textarea
+                id="rmt-input"
+                rows="4"
+                placeholder="Tuliskan informasi yang diketahui, ditanyakan, dan hubungan pola..."
+            ></textarea>
         </div>
 
-        <div id="rmt-feedback" class="hasil-jawaban" aria-live="polite"></div>
+        <div class="literasi-tahap">
+            <h4>2. Planning of Action (Perencanaan Tindakan)</h4>
+            <p>
+                Susun langkah-langkah yang akan kamu gunakan untuk
+                menentukan bilangan pada tahap ke-8.
+            </p>
+            <textarea
+                id="rmt-plan"
+                rows="4"
+                placeholder="Tuliskan rencana penyelesaian secara berurutan..."
+            ></textarea>
+        </div>
 
-        <div id="rmt-hint" class="catatan" hidden>
-            <h3>Petunjuk Bertahap</h3>
+        <div class="literasi-tahap">
+            <h4>3. Penyelesaian Masalah</h4>
+            <p>
+                Terapkan rencanamu. Tunjukkan perhitungan dan hasil
+                bilangan pada tahap ke-8 untuk kedua kelompok.
+            </p>
+            <textarea
+                id="rmt-answer"
+                rows="4"
+                placeholder="Tuliskan proses perhitungan dan jawabanmu..."
+            ></textarea>
+        </div>
+
+        <div class="literasi-tahap">
+            <h4>4. Reflection (Refleksi)</h4>
+            <p>
+                Apakah strategi yang kamu gunakan sudah tepat?
+                Apa yang kamu pahami dari hubungan kedua pola?
+                Adakah cara lain untuk menyelesaikannya?
+            </p>
+            <textarea
+                id="rmt-reflection"
+                rows="4"
+                placeholder="Tuliskan evaluasi strategi dan pemahamanmu..."
+            ></textarea>
+        </div>
+
+        <div class="rmt-actions">
+            <button id="btn-periksa-rmt" type="button">
+                Periksa Jawaban
+            </button>
+
+            <button id="btn-petunjuk-rmt" type="button">
+                Lihat Petunjuk
+            </button>
+
+            <button id="btn-simpan-rmt" type="button">
+                Simpan Jawaban
+            </button>
+        </div>
+
+        <div id="rmt-feedback" class="feedback-box"></div>
+
+        <div id="rmt-hint" class="hint-box">
             <p id="rmt-hint-text"></p>
         </div>
+    </div>
+</section>
 
-        <div class="tombol-aksi">
-            <button type="button" id="btn-petunjuk-rmt">Petunjuk Berikutnya</button>
+
+    <!-- LITERASI MATEMATIS -->
+    
+<section id="literasi" class="section">
+    <div class="section-heading">
+        <h2>Literasi Matematika</h2>
+        <p>Kerjakan lima soal berikut berdasarkan tahapan penyelesaian yang tersedia.</p>
+    </div>
+
+    <div id="literasi-soal"></div>
+
+    <div class="content-card">
+        <h3>Hasil Penilaian</h3>
+        <p id="literasi-total">Belum ada penilaian.</p>
+        <div id="literasi-detail"></div>
+        <button id="btn-periksa-literasi" type="button">
+            Periksa Jawaban
+        </button>
+        <button id="btn-simpan-literasi" type="button">
+            Simpan Hasil
+        </button>
+    </div>
+</section>
+
+
+    <!-- LATIHAN SOAL -->
+    <section id="latihan">
+        <div class="section-heading">
+            <span class="section-label">05 • PRACTICE</span>
+            <h2>🎯 Latihan Soal</h2>
+            <p>Uji pemahamanmu melalui lima pertanyaan berikut!</p>
         </div>
 
-        <h3>4. Refleksi</h3>
-        <label for="rmt-reflection">Tuliskan refleksimu setelah menyelesaikan masalah:</label>
-        <textarea id="rmt-reflection" rows="4" placeholder="Tuliskan refleksimu..."></textarea>
+        <article class="content-card">
+            <p>
+                Isilah semua jawaban berikut, kemudian tekan tombol
+                Periksa Jawaban untuk melihat hasilnya.
+            </p>
 
-        <div class="tombol-aksi">
-            <button type="button" id="btn-simpan-rmt">Simpan Jawaban RMT</button>
+            <div class="progress-container">
+                <p id="progress-text">0 dari 5 dijawab</p>
+                <div class="progress-track">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="soal">
+                <label for="jawaban1">1. Tuliskan lima suku pertama bilangan ganjil!</label>
+                <input id="jawaban1" type="text" placeholder="Contoh: 1,3,5,7,9">
+            </div>
+
+            <div class="soal">
+                <label for="jawaban2">2. Tuliskan enam suku pertama bilangan genap!</label>
+                <input id="jawaban2" type="text" placeholder="Contoh: 2,4,6,8,10,12">
+            </div>
+
+            <div class="soal">
+                <label for="jawaban3">3. Tentukan suku ke-15 bilangan ganjil!</label>
+                <input id="jawaban3" type="text" placeholder="Masukkan jawaban">
+            </div>
+
+            <div class="soal">
+                <label for="jawaban4">4. Tentukan suku ke-20 bilangan genap!</label>
+                <input id="jawaban4" type="text" placeholder="Masukkan jawaban">
+            </div>
+
+            <div class="soal">
+                <label for="jawaban5">
+                    5. Mengapa hasil perkalian bilangan ganjil dengan
+                    bilangan genap selalu genap?
+                </label>
+                <textarea id="jawaban5" rows="3"
+                    placeholder="Tuliskan alasanmu..."></textarea>
+            </div>
+
+            <div class="tombol-aksi">
+                <button type="button" id="btn-periksa-latihan">Periksa Jawaban</button>
+                <button type="button" id="btn-reset-latihan">Ulangi Latihan</button>
+            </div>
+
+            <div id="hasil-latihan" class="hasil-jawaban" aria-live="polite"></div>
+        </article>
+    </section>
+
+    <!-- HASIL DAN REFLEKSI -->
+    <section id="hasil-refleksi">
+        <div class="section-heading">
+            <span class="section-label">06 • REFLECTION</span>
+            <h2>🌷 Hasil dan Refleksi Pembelajaran</h2>
+            <p>Kenali pemahamanmu setelah mengikuti kegiatan MathLearn.</p>
         </div>
+
+        <article class="content-card">
+            <h3>Refleksi Belajar</h3>
+            <p>
+                Setelah mempelajari pola bilangan ganjil dan genap,
+                pikirkan kembali hal-hal yang sudah kamu pahami.
+            </p>
+            <label for="refleksi-umum">Apa hal baru yang kamu pelajari?</label>
+            <textarea id="refleksi-umum" rows="3"
+                placeholder="Tuliskan hal baru yang kamu pelajari..."></textarea>
+
+            <label for="refleksi-kesulitan">Bagian mana yang masih sulit dipahami?</label>
+            <textarea id="refleksi-kesulitan" rows="3"
+                placeholder="Tuliskan bagian yang masih sulit..."></textarea>
+
+            <label for="refleksi-perbaikan">Apa yang akan kamu lakukan agar lebih memahami materi?</label>
+            <textarea id="refleksi-perbaikan" rows="3"
+                placeholder="Tuliskan rencana belajarmu..."></textarea>
+
+            <div class="tombol-aksi">
+                <button type="button" id="btn-simpan-refleksi">Simpan Refleksi</button>
+            </div>
+            <div id="hasil-refleksi-feedback" class="hasil-jawaban" aria-live="polite"></div>
+        </article>
+    </section>
+
+    <!-- AI TUTOR -->
+    <section id="ai-tutor">
+        <div class="section-heading">
+            <span class="section-label">07 • AI LEARNING COMPANION</span>
+            <h2>🤖 Belajar Bersama Kak Aritma</h2>
+            <p>
+                Punya pertanyaan tentang pola bilangan?
+                Tanyakan kepada Kak Aritma melalui tombol chat di bawah.
+            </p>
+        </div>
+        <article class="content-card tutor-card">
+            <div class="tutor-icon">🌸</div>
+            <h3>Kenalan dengan Kak Aritma!</h3>
+            <p>
+                Kak Aritma adalah teman belajar matematika yang siap
+                membantu menjelaskan konsep, memberikan contoh,
+                dan membimbing langkah penyelesaian soal.
+            </p>
+            <p>Tekan tombol <strong>Tanya Kak Aritma</strong> di pojok layar untuk memulai percakapan.</p>
+        </article>
     </section>
 
 </main>
 
-<footer>
-    <p>MathLearn - Media Pembelajaran Pola Bilangan Ganjil dan Genap</p>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-decoration">✿ ✧ 🌷 ✧ ✿</div>
+    <h2>MathLearn</h2>
+    <p>Media Pembelajaran Pola Bilangan Ganjil dan Genap</p>
+    <p>Belajar Matematika dengan Menyenangkan 💜</p>
+    <small>© 2026 MathLearn. Media Pembelajaran Interaktif.</small>
 </footer>
-
-<script src="./script.js" defer></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const hubungkan = (id, fungsi) => {
-        const tombol = document.getElementById(id);
-        if (tombol && typeof fungsi === "function") {
-            tombol.addEventListener("click", fungsi);
-        }
-    };
-
-    hubungkan("btn-periksa-latihan", window.periksaJawaban);
-    hubungkan("btn-reset-latihan", window.resetJawaban);
-    hubungkan("btn-simpan-literasi", window.simpanJawabanLiterasi);
-    hubungkan("btn-periksa-rmt", window.periksaRMT);
-    hubungkan("btn-petunjuk-rmt", window.tampilkanPetunjukRMT);
-    hubungkan("btn-simpan-rmt", window.simpanJawabanRMT);
-});
-</script>
 
 <!-- KAK ARITMA CHATBOT -->
 <button id="chat-toggle" type="button">
@@ -223,7 +450,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <div id="chat-widget" hidden>
     <div class="chat-header">
         <div>
-            <strong>Kak Aritma</strong>
+            <strong>Kak Aritma 🌸</strong>
             <small>Teman Belajar Matematika</small>
         </div>
         <button id="chat-close" type="button">✕</button>
@@ -243,6 +470,73 @@ document.addEventListener("DOMContentLoaded", function () {
     </form>
 </div>
 
+<!-- SCRIPT -->
+<script src="./src/script.js" defer></script>
 <script src="./src/chatbot.js" defer></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const hubungkan = (id, fungsi) => {
+        const tombol = document.getElementById(id);
+        if (tombol && typeof fungsi === "function") {
+            tombol.addEventListener("click", fungsi);
+        }
+    };
+
+    hubungkan("btn-periksa-latihan", window.periksaJawaban);
+    hubungkan("btn-reset-latihan", window.resetJawaban);
+    hubungkan("btn-simpan-literasi", window.simpanJawabanLiterasi);
+    hubungkan("btn-periksa-rmt", window.periksaRMT);
+    hubungkan("btn-petunjuk-rmt", window.tampilkanPetunjukRMT);
+    hubungkan("btn-simpan-rmt", window.simpanJawabanRMT);
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const tombolSimpan = document.getElementById("btn-simpan-refleksi");
+
+    if (tombolSimpan) {
+        tombolSimpan.addEventListener("click", function () {
+            const data = {
+                halBaru: document.getElementById("refleksi-umum").value,
+                kesulitan: document.getElementById("refleksi-kesulitan").value,
+                perbaikan: document.getElementById("refleksi-perbaikan").value
+            };
+
+            if (!data.halBaru.trim() && !data.kesulitan.trim() && !data.perbaikan.trim()) {
+                document.getElementById("hasil-refleksi-feedback").textContent =
+                    "Silakan isi refleksi terlebih dahulu.";
+                return;
+            }
+
+            const isi = [
+                "REFLEKSI PEMBELAJARAN MATHLEARN",
+                "",
+                "Hal baru yang dipelajari:",
+                data.halBaru,
+                "",
+                "Kesulitan:",
+                data.kesulitan,
+                "",
+                "Rencana perbaikan:",
+                data.perbaikan
+            ].join("\n");
+
+            const file = new Blob([isi], { type: "text/plain;charset=utf-8" });
+            const url = URL.createObjectURL(file);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "refleksi-mathlearn.txt";
+            link.click();
+            URL.revokeObjectURL(url);
+
+            document.getElementById("hasil-refleksi-feedback").textContent =
+                "Refleksi berhasil disiapkan untuk disimpan.";
+        });
+    }
+});
+</script>
+
 </body>
 </html>

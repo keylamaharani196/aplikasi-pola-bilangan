@@ -1,461 +1,537 @@
 
-/* =====================================================
-   MATHLEARN - POLA BILANGAN GANJIL DAN GENAP
-   FUNGSI LATIHAN, LITERASI, DAN AKTIVITAS RMT
-   ===================================================== */
+"use strict";
 
+/* =========================================
+   MATHLEARN - SCRIPT UTAMA
+   ========================================= */
 
-// =====================================================
-// 1. DATA KUNCI JAWABAN DAN PEMBAHASAN
-// =====================================================
-
-const kunciJawaban = [
-    {
-        jawaban: "1,3,5,7,9",
-        pembahasan:
-            "Pola bilangan ganjil dimulai dari 1 dan bertambah 2. " +
-            "Lima suku pertamanya adalah 1, 3, 5, 7, dan 9."
-    },
-    {
-        jawaban: "2,4,6,8,10,12",
-        pembahasan:
-            "Pola bilangan genap dimulai dari 2 dan bertambah 2. " +
-            "Enam suku pertamanya adalah 2, 4, 6, 8, 10, dan 12."
-    },
-    {
-        jawaban: "29",
-        pembahasan:
-            "Gunakan rumus Un = 2n - 1. U15 = 2(15) - 1 = 29."
-    },
-    {
-        jawaban: "40",
-        pembahasan:
-            "Gunakan rumus Un = 2n. U20 = 2(20) = 40."
-    }
-];
-
-
-// =====================================================
-// 2. FUNGSI NORMALISASI JAWABAN
-// =====================================================
-
-function normalisasi(teks) {
-    return teks
-        .trim()
-        .replace(/\s+/g, "")
-        .replace(/[.;]/g, ",")
-        .replace(/,+$/, "");
+function ambilNilai(id) {
+    const elemen = document.getElementById(id);
+    return elemen ? elemen.value.trim() : "";
 }
 
-
-// =====================================================
-// 3. FUNGSI MENGAMANKAN TEKS
-// =====================================================
-
-function aman(teks) {
-    const elemen = document.createElement("div");
-    elemen.textContent = teks;
-    return elemen.innerHTML;
+function tampilkanPesan(id, pesan) {
+    const elemen = document.getElementById(id);
+    if (elemen) elemen.textContent = pesan;
 }
 
-
-// =====================================================
-// 4. MEMPERBARUI PROGRES LATIHAN
-// =====================================================
-
-function perbaruiProgres() {
-    let terisi = 0;
-
-    for (let i = 1; i <= 5; i++) {
-        const jawaban = document.getElementById("jawaban" + i);
-
-        if (jawaban && jawaban.value.trim() !== "") {
-            terisi++;
-        }
-    }
-
-    const persentase = (terisi / 5) * 100;
-
-    const teksProgres = document.getElementById("progress-text");
-    const batangProgres = document.getElementById("progress-bar");
-
-    if (teksProgres) {
-        teksProgres.textContent = terisi + " dari 5 dijawab";
-    }
-
-    if (batangProgres) {
-        batangProgres.style.width = persentase + "%";
-    }
-}
-
-
-// Memantau perubahan jawaban dengan aman.
-for (let i = 1; i <= 5; i++) {
-    const kolomJawaban = document.getElementById("jawaban" + i);
-
-    if (kolomJawaban) {
-        kolomJawaban.addEventListener("input", perbaruiProgres);
-    }
-}
-
-perbaruiProgres();
-
-
-// =====================================================
-// 5. MEMERIKSA JAWABAN LATIHAN
-// =====================================================
-
-function periksaJawaban() {
-    const jawabanSiswa = [];
-
-    for (let i = 1; i <= 5; i++) {
-        const kolom = document.getElementById("jawaban" + i);
-
-        if (!kolom) {
-            alert("Kolom jawaban soal " + i + " tidak ditemukan.");
-            return;
-        }
-
-        jawabanSiswa.push(kolom.value.trim());
-    }
-
-    if (jawabanSiswa.some(jawaban => jawaban === "")) {
-        alert("Silakan isi semua lima soal terlebih dahulu.");
-        return;
-    }
-
-    let jumlahBenar = 0;
-    let rincianHasil = "";
-
-    // Memeriksa soal nomor 1 sampai 4.
-    for (let i = 0; i < 4; i++) {
-        const benar =
-            normalisasi(jawabanSiswa[i]) ===
-            kunciJawaban[i].jawaban;
-
-        if (benar) {
-            jumlahBenar++;
-        }
-
-        rincianHasil += `
-            <div class="hasil-item">
-                <h4>Soal ${i + 1}: ${benar ? "Benar" : "Belum tepat"}</h4>
-                <p><strong>Jawaban kamu:</strong> ${aman(jawabanSiswa[i])}</p>
-                <p><strong>Kunci jawaban:</strong> ${kunciJawaban[i].jawaban}</p>
-                <p><strong>Pembahasan:</strong> ${kunciJawaban[i].pembahasan}</p>
-            </div>
-        `;
-    }
-
-    // Pemeriksaan sederhana soal uraian nomor 5.
-    const jawabanLima = jawabanSiswa[4].toLowerCase();
-
-    const menyebutGenap = jawabanLima.includes("genap");
-
-    const menyebutAlasan =
-        jawabanLima.includes("2") ||
-        jawabanLima.includes("habis dibagi") ||
-        jawabanLima.includes("kelipatan");
-
-    const benarLima = menyebutGenap && menyebutAlasan;
-
-    if (benarLima) {
-        jumlahBenar++;
-    }
-
-    rincianHasil += `
-        <div class="hasil-item">
-            <h4>Soal 5: ${benarLima ? "Sesuai kriteria awal" : "Perlu ditinjau kembali"}</h4>
-            <p><strong>Jawaban kamu:</strong> ${aman(jawabanSiswa[4])}</p>
-            <p><strong>Pembahasan:</strong>
-                Hasil perkalian bilangan ganjil dengan bilangan genap
-                selalu genap karena bilangan genap memiliki faktor 2.
-            </p>
-            <p><em>Catatan: Pemeriksaan ini menggunakan kata kunci
-            dan belum menilai keseluruhan kualitas penalaran.</em></p>
-        </div>
-    `;
-
-    const nilai = jumlahBenar * 20;
-
-    let pesan = "";
-
-    if (nilai === 100) {
-        pesan = "Luar biasa! Semua jawaban memenuhi kriteria.";
-    } else if (nilai >= 60) {
-        pesan = "Bagus! Pelajari kembali soal yang belum tepat.";
-    } else {
-        pesan = "Tetap semangat! Pelajari materi dan pembahasan kembali.";
-    }
-
-    const tempatHasil = document.getElementById("hasil-latihan");
-
-    if (!tempatHasil) {
-        alert("Tempat hasil latihan tidak ditemukan.");
-        return;
-    }
-
-    tempatHasil.innerHTML = `
-        <h3>Hasil Latihan Kamu</h3>
-        <div class="nilai-box">
-            <span>Nilai</span>
-            <strong>${nilai}</strong>
-            <p>${jumlahBenar} dari 5 soal memenuhi kriteria pemeriksaan.</p>
-        </div>
-        <p>${pesan}</p>
-        ${rincianHasil}
-    `;
-
-    tempatHasil.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-}
-
-
-// =====================================================
-// 6. MENGULANGI LATIHAN
-// =====================================================
-
-function resetJawaban() {
-    for (let i = 1; i <= 5; i++) {
-        const kolom = document.getElementById("jawaban" + i);
-
-        if (kolom) {
-            kolom.value = "";
-        }
-    }
-
-    const tempatHasil = document.getElementById("hasil-latihan");
-
-    if (tempatHasil) {
-        tempatHasil.innerHTML = "";
-    }
-
-    perbaruiProgres();
-}
-
-
-// =====================================================
-// 7. MENYIMPAN JAWABAN TES LITERASI MATEMATIS
-// =====================================================
-
-function simpanJawabanLiterasi() {
-    let hasil = "HASIL TES LITERASI MATEMATIS\n";
-    hasil += "Materi: Pola Bilangan Ganjil dan Genap\n";
-    hasil += "====================================\n\n";
-
-    for (let nomor = 1; nomor <= 5; nomor++) {
-        hasil += "SOAL " + nomor + "\n";
-
-        const tahap = document.querySelectorAll(
-            '[id^="l' + nomor + 't"]'
-        );
-
-        tahap.forEach((kolom, indeks) => {
-            hasil += "Tahap " + (indeks + 1) + ":\n";
-            hasil += (kolom.value.trim() || "Belum dijawab") + "\n\n";
-        });
-
-        hasil += "------------------------------------\n\n";
-    }
-
-    const file = new Blob([hasil], {
+function simpanFile(namaFile, isi) {
+    const blob = new Blob([isi], {
         type: "text/plain;charset=utf-8"
     });
 
+    const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
-    const url = URL.createObjectURL(file);
 
     link.href = url;
-    link.download = "Jawaban_Tes_Literasi.txt";
-    link.click();
+    link.download = namaFile;
 
-    URL.revokeObjectURL(url);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
+function normalisasi(teks) {
+    return String(teks)
+        .toLowerCase()
+        .replace(/\s+/g, " ")
+        .trim();
+}
 
-// =====================================================
-// 8. AKTIVITAS PEMBELAJARAN RMT
-// =====================================================
+/* =========================================
+   1. LATIHAN SOAL
+   ========================================= */
 
-let tahapPetunjukRMT = 0;
+const jumlahSoal = 5;
 
-const daftarPetunjukRMT = [
-    "Petunjuk 1: Kelompok A dimulai dari bilangan 1, sedangkan kelompok B dimulai dari bilangan 2.",
-    "Petunjuk 2: Kedua pola bertambah 2 pada setiap suku.",
-    "Petunjuk 3: Gunakan rumus pola ganjil Un = 2n - 1 dan pola genap Un = 2n.",
-    "Petunjuk 4: Masukkan n = 8 ke dalam kedua rumus tersebut."
+function hitungProgress() {
+    let terisi = 0;
+
+    for (let i = 1; i <= jumlahSoal; i++) {
+        if (ambilNilai("jawaban" + i)) terisi++;
+    }
+
+    const teks = document.getElementById("progress-text");
+    const bar = document.getElementById("progress-bar");
+
+    if (teks) {
+        teks.textContent = terisi + " dari " + jumlahSoal + " dijawab";
+    }
+
+    if (bar) {
+        bar.style.width = (terisi / jumlahSoal * 100) + "%";
+    }
+}
+
+function periksaJawaban() {
+    const jawaban = [];
+
+    for (let i = 1; i <= jumlahSoal; i++) {
+        jawaban.push(normalisasi(ambilNilai("jawaban" + i)));
+    }
+
+    const belumDiisi = jawaban
+        .map((isi, indeks) => isi ? null : indeks + 1)
+        .filter(nomor => nomor !== null);
+
+    if (belumDiisi.length > 0) {
+        tampilkanPesan(
+            "hasil-latihan",
+            "Lengkapi jawaban nomor " + belumDiisi.join(", ") + " terlebih dahulu."
+        );
+        return;
+    }
+
+    let benar = 0;
+
+    const angka1 = jawaban[0].match(/\d+/g) || [];
+    if (angka1.join(",") === "1,3,5,7,9") benar++;
+
+    const angka2 = jawaban[1].match(/\d+/g) || [];
+    if (angka2.join(",") === "2,4,6,8,10,12") benar++;
+
+    const angka3 = jawaban[2].match(/\d+/g) || [];
+    if (angka3.length === 1 && angka3[0] === "29") benar++;
+
+    const angka4 = jawaban[3].match(/\d+/g) || [];
+    if (angka4.length === 1 && angka4[0] === "40") benar++;
+
+    const alasan = jawaban[4];
+    if (
+        alasan.includes("ganjil") &&
+        alasan.includes("genap") &&
+        (alasan.includes("dikali") ||
+         alasan.includes("perkalian") ||
+         alasan.includes("habis dibagi 2") ||
+         alasan.includes("kelipatan 2"))
+    ) {
+        benar++;
+    }
+
+    const nilai = benar * 20;
+
+    tampilkanPesan(
+        "hasil-latihan",
+        "HASIL LATIHAN MATHLEARN\n" +
+        "Jawaban benar: " + benar + " dari 5 soal\n" +
+        "Nilai: " + nilai + "\n\n" +
+        (benar === 5
+            ? "Hebat! Semua jawabanmu tepat. 🌸"
+            : "Tetap semangat! Pelajari kembali jawaban yang belum tepat.")
+    );
+}
+
+function resetJawaban() {
+    for (let i = 1; i <= jumlahSoal; i++) {
+        const elemen = document.getElementById("jawaban" + i);
+        if (elemen) elemen.value = "";
+    }
+
+    tampilkanPesan("hasil-latihan", "");
+    hitungProgress();
+}
+
+/* =========================================
+   2. LITERASI MATEMATIS
+   Total nilai maksimal 30
+   ========================================= */
+
+const dataLiterasi = [
+    {
+        judul: "Soal 1 - Mathematical Reasoning",
+        soal: "Dua siswa mengamati pola bilangan. Dita menyatakan bahwa pola 1, 3, 5, 7, ... bertambah 2 sehingga bilangan berikutnya adalah 9. Roni menyatakan bahwa pola 2, 4, 6, 8, ... bertambah 2 sehingga bilangan berikutnya adalah 10. Apakah kedua pernyataan tersebut benar? Jelaskan hubungan dan alasan matematisnya.",
+        
+tahap: [
+    {
+        pertanyaan: "Identifikasi bahwa kedua pola bilangan bertambah 2.",
+        bobot: 1,
+        cek: j => /bertambah 2|tambah 2|selisih 2|beda 2/.test(j)
+    },
+    {
+        pertanyaan: "Tentukan suku berikutnya, yaitu 9 untuk pola ganjil dan 10 untuk pola genap.",
+        bobot: 2,
+        cek: j => /\b9\b/.test(j) && /\b10\b/.test(j)
+    },
+    {
+        pertanyaan: "Jelaskan bahwa pola pertama ganjil dan pola kedua genap.",
+        bobot: 1,
+        cek: j => /ganjil/.test(j) && /genap/.test(j)
+    },
+    {
+        pertanyaan: "Nyatakan bahwa kedua pernyataan Dita dan Roni benar.",
+        bobot: 1,
+        cek: j => /benar|tepat/.test(j)
+    },
+    {
+        pertanyaan: "Jelaskan bahwa penambahan 2 mempertahankan jenis bilangan ganjil atau genap.",
+        bobot: 1,
+        cek: j => /tambah 2|penambahan 2|bertambah 2/.test(j) &&
+                  /tetap|mempertahankan/.test(j) &&
+                  /ganjil|genap/.test(j)
+    }
+]
+
+    },
+    {
+        judul: "Soal 2 - Formulating Situations Mathematically",
+        soal: "Panitia membuat kartu bilangan untuk dua kelompok. Kelompok A menggunakan bilangan ganjil mulai dari 1, sedangkan kelompok B menggunakan bilangan genap mulai dari 2. Setiap kelompok menambah 2 pada setiap tahap. Buat model matematika suku ke-n untuk masing-masing kelompok, kemudian tentukan bilangan pada tahap ke-8.",
+        tahap: [
+            {
+                pertanyaan: "Tuliskan pola A: 1, 3, 5, ... dan pola B: 2, 4, 6, ...",
+                bobot: 1,
+                cek: j => /1.*3.*5/.test(j) && /2.*4.*6/.test(j)
+            },
+            {
+                pertanyaan: "Jelaskan arti n sebagai nomor tahap atau suku.",
+                bobot: 1,
+                cek: j => /\bn\b/.test(j) && /tahap|suku|urutan/.test(j)
+            },
+            {
+                pertanyaan: "Tuliskan model kelompok A: Un = 2n - 1.",
+                bobot: 1,
+                cek: j => /2n-1|2n−1|2\*n-1|2\*n−1/.test(j.replace(/\s/g, ""))
+            },
+            {
+                pertanyaan: "Tuliskan model kelompok B: Un = 2n.",
+                bobot: 1,
+                cek: j => /2n|2\*n/.test(j.replace(/\s/g, ""))
+            },
+            {
+                pertanyaan: "Hitung U8 kelompok A sehingga diperoleh 15.",
+                bobot: 1,
+                cek: j => /\b15\b/.test(j)
+            },
+            {
+                pertanyaan: "Hitung U8 kelompok B sehingga diperoleh 16.",
+                bobot: 1,
+                cek: j => /\b16\b/.test(j)
+            }
+        ]
+    },
+    {
+        judul: "Soal 3 - Employing Mathematical Concepts, Facts, and Procedures",
+        soal: "Diketahui rumus bilangan ganjil Un = 2n - 1 dan rumus bilangan genap Un = 2n. Tentukan suku ke-15 bilangan ganjil dan suku ke-20 bilangan genap. Tunjukkan perhitungannya.",
+        tahap: [
+            {
+                pertanyaan: "Tuliskan rumus bilangan ganjil Un = 2n - 1.",
+                bobot: 1,
+                cek: j => /2n-1|2n−1|2\*n-1|2\*n−1/.test(j.replace(/\s/g, ""))
+            },
+            {
+                pertanyaan: "Hitung U15 = 2(15) - 1 = 29.",
+                bobot: 2,
+                cek: j => /\b15\b/.test(j) && /\b29\b/.test(j)
+            },
+            {
+                pertanyaan: "Tuliskan rumus bilangan genap Un = 2n.",
+                bobot: 1,
+                cek: j => /2n|2\*n/.test(j.replace(/\s/g, ""))
+            },
+            {
+                pertanyaan: "Hitung U20 = 2(20) = 40.",
+                bobot: 2,
+                cek: j => /\b20\b/.test(j) && /\b40\b/.test(j)
+            }
+        ]
+    },
+    {
+        judul: "Soal 4 - Interpreting, Applying, and Evaluating Mathematical Outcomes",
+        soal: "Andi menyatakan bahwa jumlah satu bilangan ganjil dan satu bilangan genap selalu menghasilkan bilangan ganjil. Beni memberikan contoh 5 + 8 = 13. Apakah contoh Beni mendukung pernyataan Andi? Jelaskan maknanya dan berikan contoh lain untuk memeriksa kesimpulan tersebut.",
+        tahap: [
+            {
+                pertanyaan: "Identifikasi pernyataan bahwa ganjil ditambah genap menghasilkan ganjil.",
+                bobot: 1,
+                cek: j => /ganjil/.test(j) && /genap/.test(j)
+            },
+            {
+                pertanyaan: "Periksa perhitungan 5 + 8 = 13.",
+                bobot: 1,
+                cek: j => /\b5\b/.test(j) && /\b8\b/.test(j) && /\b13\b/.test(j)
+            },
+            {
+                pertanyaan: "Jelaskan bahwa 13 merupakan bilangan ganjil.",
+                bobot: 1,
+                cek: j => /\b13\b/.test(j) && /ganjil/.test(j)
+            },
+            {
+                pertanyaan: "Jelaskan bahwa satu contoh belum membuktikan aturan umum.",
+                bobot: 1,
+                cek: j => /contoh/.test(j) && /belum|tidak/.test(j) && /membuktikan|aturan umum/.test(j)
+            },
+            {
+                pertanyaan: "Berikan contoh lain, misalnya 3 + 4 = 7.",
+                bobot: 1,
+                cek: j => /\b3\b/.test(j) && /\b4\b/.test(j) && /\b7\b/.test(j)
+            },
+            {
+                pertanyaan: "Simpulkan bahwa ganjil ditambah genap selalu menghasilkan ganjil.",
+                bobot: 1,
+                cek: j => /ganjil/.test(j) && /genap/.test(j) && /selalu|menghasilkan/.test(j)
+            }
+        ]
+    },
+    {
+        judul: "Soal 5 - Employing Mathematical Concepts, Facts, and Procedures",
+        soal: "Dalam sebuah permainan, kartu bilangan ganjil disusun mulai dari 1 dan kartu bilangan genap mulai dari 2. Rara menemukan kartu bernomor 37 dan 42. Tentukan posisi kartu 37 pada pola ganjil dan posisi kartu 42 pada pola genap. Tunjukkan cara menentukan posisinya.",
+        tahap: [
+            {
+                pertanyaan: "Tuliskan rumus ganjil Un = 2n - 1 dan genap Un = 2n.",
+                bobot: 1,
+                cek: j => /2n-1|2n−1/.test(j.replace(/\s/g, "")) && /2n/.test(j.replace(/\s/g, ""))
+            },
+            {
+                pertanyaan: "Buat persamaan 37 = 2n - 1.",
+                bobot: 1,
+                cek: j => /37=2n-1|37=2n−1/.test(j.replace(/\s/g, ""))
+            },
+            {
+                pertanyaan: "Selesaikan persamaan hingga memperoleh n = 19.",
+                bobot: 1,
+                cek: j => /\b19\b/.test(j)
+            },
+            {
+                pertanyaan: "Buat persamaan 42 = 2n.",
+                bobot: 1,
+                cek: j => /42=2n/.test(j.replace(/\s/g, ""))
+            },
+            {
+                pertanyaan: "Selesaikan persamaan hingga memperoleh n = 21.",
+                bobot: 1,
+                cek: j => /\b21\b/.test(j)
+            },
+            {
+                pertanyaan: "Simpulkan 37 adalah suku ke-19 dan 42 adalah suku ke-21.",
+                bobot: 1,
+                cek: j => /\b37\b/.test(j) && /\b19\b/.test(j) && /\b42\b/.test(j) && /\b21\b/.test(j)
+            }
+        ]
+    }
 ];
 
+/* Membuat soal dan kotak jawaban secara otomatis */
+function buatTampilanLiterasi() {
+    const wadah = document.getElementById("literasi-soal");
+    if (!wadah) return;
 
-// -----------------------------------------------------
-// A. MEMERIKSA JAWABAN RMT
-// -----------------------------------------------------
+    wadah.innerHTML = dataLiterasi.map((soal, i) => `
+        <article class="content-card literasi-card">
+            <h3>${soal.judul}</h3>
+            <p>${soal.soal}</p>
 
-function periksaRMT() {
-    const kolomInput = document.getElementById("rmt-input");
-    const kolomRencana = document.getElementById("rmt-plan");
-    const kolomJawaban = document.getElementById("rmt-answer");
-    const hasil = document.getElementById("rmt-feedback");
+            ${soal.tahap.map((t, j) => `
+                <div class="literasi-tahap">
+                    <label for="literasi-${i}-${j}">
+                        Tahap ${j + 1}. ${t.pertanyaan}
+                        <small>(Maksimal ${t.bobot} poin)</small>
+                    </label>
 
-    if (!kolomInput || !kolomRencana || !kolomJawaban || !hasil) {
-        alert("Elemen Aktivitas RMT tidak ditemukan. Periksa kembali HTML.");
-        return;
-    }
+                    <textarea
+                        id="literasi-${i}-${j}"
+                        rows="3"
+                        placeholder="Tuliskan jawaban tahap ini..."
+                    ></textarea>
+                </div>
+            `).join("")}
 
-    const input = kolomInput.value.trim();
-    const rencana = kolomRencana.value.trim();
-    const jawaban = kolomJawaban.value.trim();
-
-    if (!input || !rencana || !jawaban) {
-        hasil.innerHTML = `
-            <div class="hasil-item">
-                <h4>Jawaban belum lengkap.</h4>
-                <p>Lengkapi analisis masalah, rencana penyelesaian,
-                dan penyelesaian terlebih dahulu.</p>
-            </div>
-        `;
-        return;
-    }
-
-    // Menghapus spasi agar bentuk penulisan rumus lebih fleksibel.
-    const teksJawaban = jawaban
-        .toLowerCase()
-        .replace(/\s+/g, "");
-
-    const memuatGanjil =
-        teksJawaban.includes("15") ||
-        teksJawaban.includes("2(8)-1") ||
-        teksJawaban.includes("2×8-1");
-
-    const memuatGenap =
-        teksJawaban.includes("16") ||
-        teksJawaban.includes("2(8)") ||
-        teksJawaban.includes("2×8");
-
-    if (memuatGanjil && memuatGenap) {
-        hasil.innerHTML = `
-            <div class="hasil-item">
-                <h4>Bagus! Jawabanmu sudah sesuai.</h4>
-                <p>Kamu berhasil menentukan nomor kartu kedua kelompok.</p>
-
-                <p><strong>Kelompok A (ganjil):</strong> 15</p>
-                <p>Un = 2(8) - 1 = 15</p>
-
-                <p><strong>Kelompok B (genap):</strong> 16</p>
-                <p>Un = 2(8) = 16</p>
-
-                <p>Terus pertahankan cara berpikirmu dan pastikan
-                kamu memahami langkah penyelesaiannya.</p>
-            </div>
-        `;
-    } else {
-        hasil.innerHTML = `
-            <div class="hasil-item">
-                <h4>Yuk, periksa kembali jawabanmu!</h4>
-                <p>Ingat bahwa pola bilangan ganjil dimulai dari 1,
-                sedangkan pola bilangan genap dimulai dari 2.</p>
-
-                <p>Gunakan rumus:</p>
-                <p>Kelompok A: Un = 2n - 1</p>
-                <p>Kelompok B: Un = 2n</p>
-
-                <p>Cobalah memasukkan n = 8 ke dalam kedua rumus.</p>
-            </div>
-        `;
-    }
-
-    hasil.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-    });
+            <p class="literasi-skor" id="literasi-skor-${i}">
+                Skor: Belum diperiksa
+            </p>
+        </article>
+    `).join("");
 }
 
+/* Memeriksa jawaban dan menghitung skor */
+function periksaLiterasi() {
+    let total = 0;
+    const rincian = [];
 
-// -----------------------------------------------------
-// B. MENAMPILKAN PETUNJUK BERTAHAP
-// -----------------------------------------------------
+    dataLiterasi.forEach((soal, i) => {
+        let skorSoal = 0;
+        let maksimal = 0;
+
+        soal.tahap.forEach((t, j) => {
+            const jawaban = normalisasi(
+                ambilNilai(`literasi-${i}-${j}`)
+            );
+
+            maksimal += t.bobot;
+
+            if (jawaban && t.cek(jawaban)) {
+                skorSoal += t.bobot;
+            }
+        });
+
+        total += skorSoal;
+
+        const skorElemen = document.getElementById(`literasi-skor-${i}`);
+        if (skorElemen) {
+            skorElemen.textContent =
+                `Skor: ${skorSoal} dari ${maksimal}`;
+        }
+
+        rincian.push(`Soal ${i + 1}: ${skorSoal}/${maksimal}`);
+    });
+
+    tampilkanPesan(
+        "literasi-total",
+        `Nilai keseluruhan: ${total} dari 30`
+    );
+
+    const detail = document.getElementById("literasi-detail");
+    if (detail) {
+        detail.innerHTML = rincian
+            .map(item => `<p>${item}</p>`)
+            .join("");
+    }
+
+    return { total, rincian };
+}
+
+/* Menyimpan jawaban dan hasil penilaian */
+function simpanJawabanLiterasi() {
+    const hasil = periksaLiterasi();
+
+    let isi = "HASIL LITERASI MATEMATIKA MATHLEARN\n";
+    isi += "Nilai keseluruhan: " + hasil.total + " dari 30\n\n";
+
+    dataLiterasi.forEach((soal, i) => {
+        isi += soal.judul + "\n";
+        isi += soal.soal + "\n";
+
+        soal.tahap.forEach((t, j) => {
+            isi += `Tahap ${j + 1}: `;
+            isi += ambilNilai(`literasi-${i}-${j}`) || "Belum diisi";
+            isi += ` (Bobot ${t.bobot})\n`;
+        });
+
+        isi += document.getElementById(`literasi-skor-${i}`).textContent;
+        isi += "\n\n";
+    });
+
+    simpanFile("hasil-literasi-mathlearn.txt", isi);
+}
+
+/* =========================================
+   3. AKTIVITAS RMT
+   ========================================= */
+
+let indeksPetunjukRMT = 0;
+
+const petunjukRMT = [
+    "Identifikasi informasi: kelompok A dimulai dari 1 dan kelompok B dimulai dari 2.",
+    "Kedua pola bertambah 2 pada setiap tahap. Kelompok A adalah pola ganjil dan kelompok B adalah pola genap.",
+    "Gunakan rumus ganjil Un = 2n - 1 dan rumus genap Un = 2n.",
+    "Masukkan n = 8. Pola ganjil menghasilkan 15 dan pola genap menghasilkan 16."
+];
 
 function tampilkanPetunjukRMT() {
-    const kotakPetunjuk = document.getElementById("rmt-hint");
-    const teksPetunjuk = document.getElementById("rmt-hint-text");
+    const kotak = document.getElementById("rmt-hint");
+    const teks = document.getElementById("rmt-hint-text");
 
-    if (!kotakPetunjuk || !teksPetunjuk) {
-        alert("Bagian petunjuk RMT tidak ditemukan.");
+    if (!kotak || !teks) return;
+
+    teks.textContent =
+        `Petunjuk ${indeksPetunjukRMT + 1} dari ${petunjukRMT.length}: ` +
+        petunjukRMT[indeksPetunjukRMT];
+
+    kotak.hidden = false;
+
+    indeksPetunjukRMT =
+        (indeksPetunjukRMT + 1) % petunjukRMT.length;
+}
+
+function periksaRMT() {
+    const analisis = ambilNilai("rmt-input");
+    const rencana = ambilNilai("rmt-plan");
+    const jawaban = ambilNilai("rmt-answer");
+    const refleksi = ambilNilai("rmt-reflection");
+
+    if (!analisis || !rencana || !jawaban || !refleksi) {
+        tampilkanPesan(
+            "rmt-feedback",
+            "Lengkapi analisis, rencana, penyelesaian, dan refleksi terlebih dahulu."
+        );
         return;
     }
 
-    kotakPetunjuk.hidden = false;
+    const teks = normalisasi(jawaban);
+    const benar15 = /\b15\b/.test(teks);
+    const benar16 = /\b16\b/.test(teks);
 
-    if (tahapPetunjukRMT < daftarPetunjukRMT.length) {
-        teksPetunjuk.textContent =
-            daftarPetunjukRMT[tahapPetunjukRMT];
-
-        tahapPetunjukRMT++;
+    if (benar15 && benar16) {
+        tampilkanPesan(
+            "rmt-feedback",
+            "Bagus! Jawabanmu sudah memuat hasil 15 untuk pola ganjil dan 16 untuk pola genap. Periksa kembali apakah langkah dan alasanmu sudah jelas."
+        );
     } else {
-        teksPetunjuk.textContent =
-            "Semua petunjuk sudah ditampilkan. Sekarang cobalah menyelesaikan soal secara mandiri!";
+        tampilkanPesan(
+            "rmt-feedback",
+            "Jawaban sudah terisi. Periksa kembali rumus dan perhitunganmu. Petunjuk: suku ke-8 pola ganjil adalah 15 dan pola genap adalah 16."
+        );
     }
 }
 
-
-// -----------------------------------------------------
-// C. MENYIMPAN JAWABAN RMT
-// -----------------------------------------------------
-
 function simpanJawabanRMT() {
-    const kolomInput = document.getElementById("rmt-input");
-    const kolomRencana = document.getElementById("rmt-plan");
-    const kolomJawaban = document.getElementById("rmt-answer");
-    const kolomRefleksi = document.getElementById("rmt-reflection");
+    const analisis = ambilNilai("rmt-input");
+    const rencana = ambilNilai("rmt-plan");
+    const jawaban = ambilNilai("rmt-answer");
+    const refleksi = ambilNilai("rmt-reflection");
 
-    if (!kolomInput || !kolomRencana ||
-        !kolomJawaban || !kolomRefleksi) {
-        alert("Kolom Aktivitas RMT tidak ditemukan.");
-        return;
-    }
-
-    const input = kolomInput.value.trim();
-    const rencana = kolomRencana.value.trim();
-    const jawaban = kolomJawaban.value.trim();
-    const refleksi = kolomRefleksi.value.trim();
-
-    if (!input || !rencana || !jawaban || !refleksi) {
-        alert("Lengkapi semua bagian Aktivitas RMT sebelum menyimpan.");
+    if (!analisis && !rencana && !jawaban && !refleksi) {
+        alert("Silakan isi aktivitas RMT terlebih dahulu.");
         return;
     }
 
     const isi =
-        "JAWABAN AKTIVITAS RMT\n\n" +
-        "Analisis Masalah:\n" + input + "\n\n" +
-        "Rencana Penyelesaian:\n" + rencana + "\n\n" +
-        "Penyelesaian:\n" + jawaban + "\n\n" +
-        "Refleksi:\n" + refleksi;
+        "HASIL AKTIVITAS RMT MATHLEARN\n\n" +
+        "1. Task Analysis (Analisis Tugas)\n" + (analisis || "Belum diisi") + "\n\n" +
+        "2. Planning of Action (Perencanaan Tindakan)\n" + (rencana || "Belum diisi") + "\n\n" +
+        "3. Penyelesaian Masalah\n" + (jawaban || "Belum diisi") + "\n\n" +
+        "4. Reflection (Refleksi)\n" + (refleksi || "Belum diisi");
 
-    const file = new Blob([isi], {
-        type: "text/plain;charset=utf-8"
-    });
-
-    const link = document.createElement("a");
-    const url = URL.createObjectURL(file);
-
-    link.href = url;
-    link.download = "Jawaban_Aktivitas_RMT.txt";
-    link.click();
-
-    URL.revokeObjectURL(url);
+    simpanFile("jawaban-aktivitas-rmt-mathlearn.txt", isi);
 }
 
-
-// =====================================================
-// 9. MENGHUBUNGKAN FUNGSI DENGAN TOMBOL HTML
-// =====================================================
+/* =========================================
+   4. HUBUNGKAN FUNGSI KE HTML
+   ========================================= */
 
 window.periksaJawaban = periksaJawaban;
 window.resetJawaban = resetJawaban;
-window.simpanJawabanLiterasi = simpanJawabanLiterasi;
-
 window.periksaRMT = periksaRMT;
 window.tampilkanPetunjukRMT = tampilkanPetunjukRMT;
 window.simpanJawabanRMT = simpanJawabanRMT;
+window.periksaLiterasi = periksaLiterasi;
+window.simpanJawabanLiterasi = simpanJawabanLiterasi;
+
+/* =========================================
+   5. INISIALISASI
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+    buatTampilanLiterasi();
+
+    for (let i = 1; i <= jumlahSoal; i++) {
+        const elemen = document.getElementById("jawaban" + i);
+
+        if (elemen) {
+            elemen.addEventListener("input", hitungProgress);
+        }
+    }
+
+    hitungProgress();
+
+    const tombolPeriksaLiterasi =
+        document.getElementById("btn-periksa-literasi");
+
+    if (tombolPeriksaLiterasi) {
+        tombolPeriksaLiterasi.addEventListener(
+            "click",
+            periksaLiterasi
+        );
+    }
+
+    console.log("MathLearn berhasil dimuat.");
+});
